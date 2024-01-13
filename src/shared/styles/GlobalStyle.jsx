@@ -1,35 +1,28 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  /* Global */
+
   :root {
     /* Color */
-    --color-white: #ffffff;
-    --color-blur-white: #DCDCDC;
-    --color-dark-white: #f6f6f6;
+    --black-default: #000000;
+    --grey-dark: #585858;
+    --grey-normal: #898C8E;
+    --grey-light: #DCDCDC;
+    --grey-blur-light: #F6F6F6;
+    --white-default: #ffffff;
 
-    --color-black: #000000;
-    --color-light-black: #333333;
+    --blue-normal: #0E4A84;
+    --blue-light: #AACEEC;
+    --blue-blur-light: #DAEBF9;
 
-    --color-grey: #939393;
-    --color-light-grey: #959595;
-    --color-dark-grey: #585858;
-
-    --color-blue: #00457E;
-    --color-light-blue: #4D7DA5;
-    --color-blur-blue: #AACEEC;
-
-    --color-orange: #F08100;
-    --color-yellow: #FFCB41;
-    --color-light-yellow: #FFEAB5;
-
-    --color-system-error: #FF6651;
-    --color-system-success: #51D486;
+    --yellow-money: #FFCB41;
+    --red-caution: #FF6651;
+    --green-success: #51D486;
 
     /* Font size */
-    --font-huge: 60px;
-    --font-large: 22px;
-    --font-medium: 18px;
+    --font-huge: 32px;
+    --font-large: 24px;
+    --font-medium: 20px;
     --font-regular: 16px;
     --font-small: 14px;
     --font-micro: 12px;
@@ -102,20 +95,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--color-dark-white);
   }
 
-  /* Typography */
-h2 {
-  font-size: var(--font-large);
-  font-weight: var(--weight-regular);
-  font-display: swap;
-  margin: 0px 0px;
-}
-
-h3 {
-  font-size: var(--font-medium);
-  font-weight: var(--weight-bold);
-  font-display: swap;
-  margin: 0px 0px;
-}
 `;
 
 export default GlobalStyle;
