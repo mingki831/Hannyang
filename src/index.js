@@ -6,7 +6,7 @@ import App from './App';
 
 import store from './redux/config/ConfigStore';
 import { Provider } from 'react-redux';
-//provider 추가되는 부분
+import { PageProvider } from './components/context/PageContext';
 
 //sentry 분석 코드
 
@@ -16,6 +16,8 @@ root.render(
   // </React.StrictMode>
 
   <Provider store={store}>
+    <PageProvider>
       <App />
+    </PageProvider>
   </Provider>
 );

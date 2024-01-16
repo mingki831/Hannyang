@@ -4,21 +4,28 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import PublicRoute from './PublicRoute';
 // import PrivateRoute from './PrivateRoute';
 
+import MainPage from '../../pages/main/MainPage'
+import SignUp from '../../pages/signup/SignUp';
+
 const Router = () => {
     return (
         <>
-        {/* <BrowserRouter>
+        <BrowserRouter>
             <Routes>
-                <Route element={<PrivateRoute/>}>
+                {/* <Route element={<PrivateRoute/>}>
                 </Route>
 
                 <Route element={<PublicRoute/>}>
-                </Route>
+                </Route> */}
 
-                <Route element={<GlobalRoute/>}>
-                </Route>
+                {/* <Route element={<GlobalRoute/>}>
+                </Route> */}
+
+                <Route path='/' element={<MainPage/>}/>
+                <Route path='*' element={<MainPage/>}/>
+                <Route path='/signup' element={<SignUp/>}/>
             </Routes>
-        </BrowserRouter> */}
+        </BrowserRouter>
         </>
     )
 }
