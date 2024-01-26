@@ -44,8 +44,43 @@ async function crawl(url) {
     // const content = htmlDOM.querySelector('#mw-content-text').textContent;
     // // 추출한 데이터에서 연속된 개행 문자를 하나의 공백으로 대체    
     // const contentWithSingleNewlines = content.replace(/\n{2,}/g, '\n');
-    elements.forEach (function (element) {
-        console.log (element.textContent+'\n');
+    elements.forEach (function (el) {
+        //질문 내용 가져오기
+        const question = el.querySelector(".z12JJ");
+        console.log ("질문:"+question.textContent);
+    
+        //객관식일 경우
+        if(el.querySelector(".oyXaNc")!=null){
+            //각 요소 가져오기
+            el.querySelector(".oyXaNc").querySelectorAll(".OvPDhc").forEach(function(choice){
+                console.log("○ "+choice.textContent);
+            })
+        }
+
+        //단답형/장문형일 경우
+        else if(el.querySelector(".AgroKb")!=null){
+            //textInput 생성
+            console.log("__________");
+        }
+
+        //체크박스일 경우
+        else if(el.querySelector(".Y6Myld")!=null){
+            //각 요소 가져오기
+            el.querySelector(".Y6Myld").querySelectorAll(".n5vBHf").forEach(function(choice){
+                console.log("ㅁ "+choice.textContent);
+            })
+        }
+
+        //드롭다운일 경우
+        else if(el.querySelector(".vQES8d")!=null){
+            //각 요소 가져오기
+            el.querySelector(".vQES8d").querySelectorAll(".vRMGwf").forEach(function(choice){
+                console.log("▽ "+choice.textContent);
+            })
+        }
+
+        console.log('');
+        // console.log (element.textContent+'\n');
     });
     // console.log(`Title: ${title}\n`);
 }
