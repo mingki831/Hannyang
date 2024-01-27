@@ -70,6 +70,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
   }
 
+  input::placeholder {
+    color: var(--grey-normal);
+  }
+
   ul {
     margin: 0;
     padding: 0;

@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import MainPage from '../../pages/main/MainPage'
 import SignUp from '../../pages/signup/SignUp';
+import Login from '../../pages/login/Login'
+import SignUpSuccess from '../../pages/signup/SignUpSuccess';
 
 const Router = () => {
     return (
@@ -24,6 +26,8 @@ const Router = () => {
                 <Route path='/' element={<MainPage/>}/>
                 <Route path='*' element={<MainPage/>}/>
                 <Route path='/signup' element={<SignUp/>}/>
+                <Route path='/signupSuccess' element={<SignUpSuccess/>}/>
+                <Route path='/login' element={<Login/>}/>
             </Routes>
         </BrowserRouter>
         </>

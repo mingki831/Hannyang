@@ -7,7 +7,6 @@ export default function Layout(props) {
 
     const navigate = useNavigate();
     const { page } = useContext(PageContext);
-    console.log(page)
 
     return (
         <>
@@ -15,7 +14,8 @@ export default function Layout(props) {
         <LayoutST.Content>
             <LayoutST.Header>
                 {/* 뒤로가기 */}
-                {page === 'MainPage' ? (
+                { (page === 'MainPage') ||
+                  (page === 'SignUpSuccess') ? (
                     <></>
                 ) : (
                 <LayoutST.BackBtn onClick={() => {navigate(-1)}}>

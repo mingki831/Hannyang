@@ -7,6 +7,7 @@ import App from './App';
 import store from './redux/config/ConfigStore';
 import { Provider } from 'react-redux';
 import { PageProvider } from './components/context/PageContext';
+import { CookiesProvider } from 'react-cookie';
 
 //sentry 분석 코드
 
@@ -15,9 +16,11 @@ root.render(
   // <React.StrictMode>
   // </React.StrictMode>
 
-  <Provider store={store}>
-    <PageProvider>
-      <App />
-    </PageProvider>
-  </Provider>
+  <CookiesProvider>
+    <Provider store={store}>
+      <PageProvider>
+        <App />
+      </PageProvider>
+    </Provider>
+  </CookiesProvider>
 );
