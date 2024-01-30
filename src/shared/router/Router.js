@@ -8,6 +8,8 @@ import MainPage from '../../pages/main/MainPage'
 import SignUp from '../../pages/signup/SignUp';
 import Login from '../../pages/login/Login'
 import SignUpSuccess from '../../pages/signup/SignUpSuccess';
+import Mypage from '../../pages/mypage/Mypage';
+import MypageEdit from '../../pages/mypage/MypageEdit'
 
 const Router = () => {
     return (
@@ -28,6 +30,8 @@ const Router = () => {
                 <Route path='/signup' element={<SignUp/>}/>
                 <Route path='/signupSuccess' element={<SignUpSuccess/>}/>
                 <Route path='/login' element={<Login/>}/>
+                <Route path='/mypage' element={<Mypage/>}/>
+                <Route path='/mypageEdit' element={<MypageEdit/>}/>
             </Routes>
         </BrowserRouter>
         </>
