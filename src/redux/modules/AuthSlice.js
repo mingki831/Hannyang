@@ -9,6 +9,8 @@ export const tokenSlice = createSlice({
         accessToken: null, //Access Token 저장
         expireTime: null //Access Token 만료시간
     },
+    //리듀서 : 데이터를 실제로 바꾸는 함수
+    //dispatch된 action을 바탕으로 데이터 수정함
     reducers: {
         //Access Token 정보 저장
         SET_TOKEN: (state, action) => {

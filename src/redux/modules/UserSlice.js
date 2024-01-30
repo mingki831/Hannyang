@@ -7,10 +7,9 @@ const initialState = {
   email: null,
   point: null,
   profileURL: null,
-  
-  gifticon: null,
-  mySurvey: null,
-  resSurvey: null,
+  // gifticon: null,
+  // mySurvey: null,
+  // resSurvey: null,
 };
 
 export const userSlice = createSlice({
@@ -24,9 +23,9 @@ export const userSlice = createSlice({
       state.email = action.payload.email;
       state.point = action.payload.point;
       state.profileURL = action.payload.profileURL;
-      state.gifticon = action.payload.gifticon;
-      state.mySurvey = action.payload.mySurvey;
-      state.resSurvey = action.payload.resSurvey;
+      // state.gifticon = action.payload.gifticon;
+      // state.mySurvey = action.payload.mySurvey;
+      // state.resSurvey = action.payload.resSurvey;
     },
     DELETE_USER: (state) => {
       state.id = null;
@@ -35,9 +34,9 @@ export const userSlice = createSlice({
       state.email = null;
       state.point = null;
       state.profileURL = null;
-      state.gifticon = null;
-      state.mySurvey = null;
-      state.resSurvey = null;
+      // state.gifticon = null;
+      // state.mySurvey = null;
+      // state.resSurvey = null;
     },
     UPDATE_USER: (state, action) => {
       state.id = action.payload.id;
@@ -46,9 +45,9 @@ export const userSlice = createSlice({
       state.email = action.payload.email;
       state.point = action.payload.point;
       state.profileURL = action.payload.profileURL;
-      state.gifticon = action.payload.gifticon;
-      state.mySurvey = action.payload.mySurvey;
-      state.resSurvey = action.payload.resSurvey;
+      // state.gifticon = action.payload.gifticon;
+      // state.mySurvey = action.payload.mySurvey;
+      // state.resSurvey = action.payload.resSurvey;
     },
   },
 });

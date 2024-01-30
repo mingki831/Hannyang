@@ -21,7 +21,7 @@ export const login = async ({ email, password }) => {
                 'email': email,
                 'password': password}));
     console.log(loginRes);
-    return loginRes.status;
+    return loginRes;
 };
 
 /**  회원가입  */

@@ -26,6 +26,6 @@ export default function getInstance() {
         baseURL: process.env.REACT_APP_API_URL,
         headers,
     });
-}
+};
 
 export const basePath = 'v1';

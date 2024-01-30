@@ -12,8 +12,8 @@ import Character from '../../components/imgs/home/character.png'
 
 export default function MainPage() {
 
-    // const nickname = useSelector((state) => state.user);
-    // console.log(nickname);
+    const nickname = useSelector((state) => state.user.nickname);
+    console.log('nickname', nickname);
 
     const token = getCookieToken();
     if ((token !== null) && (token !== undefined)) {

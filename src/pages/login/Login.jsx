@@ -1,18 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import * as LoginST from './LoginStyle';
 import Layout from '../../components/layout/Layout';
+import SVG from '../../components/imgs/SVG';
+import Logo1 from '../../components/imgs/Logo1.png';
+
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
 import { login } from '../../shared/api/AuthAPI';
-import { useNavigate } from 'react-router-dom';
-
-import SVG from '../../components/imgs/SVG';
-import Logo1 from '../../components/imgs/Logo1.png';
+import { setRefreshToken } from '../../shared/storage/Cookie';
+import { SET_TOKEN } from '../../redux/modules/AuthSlice';
+import { SET_USER } from '../../redux/modules/UserSlice';
 
 export default function SignUp() {
 
     const { setPage } = useContext(PageContext);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [isCantLogin, setIsCantLogin] = useState(false);
 
@@ -28,14 +34,13 @@ export default function SignUp() {
     const LoginHandler = async () => {
         login({email: email, password: pw})
         .then(response => {
-            if (parseInt(Number(response) / 100) === 2) {
-                navigate('/');
-                console.log("로그인 성공 !!");
-            } else {
-                setIsCantLogin(true);
-                resetInput();
-                console.log("로그인 실패");
-            }
+            console.log(response.headers);
+            setIsCantLogin(false);
+            setRefreshToken(response.headers.refresh_token);
+            dispatch(SET_TOKEN(response.headers.authorization));
+            dispatch(SET_USER(response.userInfo));
+            navigate('/');
+            console.log("로그인 성공 !!");
         }).catch((error) => {
             setIsCantLogin(true);
             resetInput();
