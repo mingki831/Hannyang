@@ -37,7 +37,23 @@ export const signUp = async ({ role, email, password, nickname }) => {
     return SignUpRes.status;                
 };
 
-/** 이메일 중복확인 API */
+/**  로그아웃  */
+export const logout = async() => {
+    const LogoutRes = 
+        await getInstance().post(
+            `/api/${basePath}/auth/logout`);
+    return LogoutRes.data;
+}
+
+/**  탈퇴  */
+export const withdraw = async() => {
+    const WithdrawRes = 
+        await getInstance().delete(
+            `/api/${basePath}/member`);
+    return WithdrawRes.data;
+}
+
+/** 이메일 중복확인 */
 export const emailDouble = async (email) => {
     const emailDbRes =
         await getInstance().get(
@@ -45,7 +61,7 @@ export const emailDouble = async (email) => {
     return emailDbRes.data;
 }
 
-/** 닉네임 중복확인 API */
+/** 닉네임 중복확인 */
 export const nickDouble = async (nick) => {
     const nickDbRes =
         await getInstance().get(
@@ -100,6 +116,3 @@ export const refreshToken = async () => {
         return statusError;
     }
 };
-
-/**  로그아웃  */
-
