@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useContext, useEffect, useState } from 'react';
+//import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as MainST from './MainPageStyle';
 
@@ -12,15 +12,11 @@ import Character from '../../components/imgs/home/character.png'
 
 export default function MainPage() {
 
-    const nickname = useSelector((state) => state.user.nickname);
-    console.log('nickname', nickname);
-
+    //const nickname = useSelector((state) => state.user.nickname);
     const token = getCookieToken();
-    if ((token !== null) && (token !== undefined)) {
-        var a = '로그인 상태'
-    } else {
-        var a = '로그인 안한 상태'
-    }
+    const [isLogin, setIsLogin] = useState(false);
+
+    console.log(token);
 
     const { setPage } = useContext(PageContext);
     const navigate = useNavigate();
@@ -39,8 +35,6 @@ export default function MainPage() {
                     <MainST.GuideText>
                         설문조사 빠르게 끝내고 <br/>
                         기프티콘 받자!
-                        {a}
-                        {/* {nickname} 님 */}
                     </MainST.GuideText>
                     <MainST.GuideButton
                         onClick={() => {

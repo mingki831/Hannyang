@@ -34,17 +34,22 @@ export default function SignUp() {
     const LoginHandler = async () => {
         login({email: email, password: pw})
         .then(response => {
-            console.log(response.headers);
-            setIsCantLogin(false);
-            setRefreshToken(response.headers.refresh_token);
-            dispatch(SET_TOKEN(response.headers.authorization));
-            dispatch(SET_USER(response.userInfo));
-            navigate('/');
-            console.log("로그인 성공 !!");
+            if (parseInt(Number(response.status) / 100) === 2) {
+                console.log(response.headers);
+                setRefreshToken(response.headers.refresh_token);
+                dispatch(SET_TOKEN(response.headers.authorization));
+                dispatch(SET_USER(response.userInfo));
+                navigate('/');
+                console.log("로그인 성공 !!");
+            } else {
+                setIsCantLogin(true);
+                resetInput();
+                console.log("로그인 실패");
+            }
         }).catch((error) => {
             setIsCantLogin(true);
             resetInput();
-            console.log("로그인 실패");
+            console.log("로그인 실패 여기로 온다고?");
         });
     }
 
@@ -94,6 +99,10 @@ export default function SignUp() {
 
                 <LoginST.SignUpBtn onClick={() => navigate('/signup')}>
                     회원가입
+                </LoginST.SignUpBtn>
+
+                <LoginST.SignUpBtn onClick={() => navigate('/')}>
+                    한냥 홈으로
                 </LoginST.SignUpBtn>
 
             </LoginST.ContentZone>
