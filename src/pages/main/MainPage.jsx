@@ -9,6 +9,7 @@ import { PageContext } from '../../components/context/PageContext';
 
 import Ellipse from '../../components/imgs/home/ellipse.png'
 import Character from '../../components/imgs/home/character.png'
+import Logo2 from '../../components/imgs/Logo2.png'
 
 export default function MainPage() {
 
@@ -16,34 +17,55 @@ export default function MainPage() {
     const token = getCookieToken();
     const [isLogin, setIsLogin] = useState(false);
 
-    console.log(token);
-
     const { setPage } = useContext(PageContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        setPage('MainPage')
+        setPage('MainPage');
+        //로그인여부
+        if (token !== null && token !== undefined) {
+          setIsLogin(true);
+        } else {
+          setIsLogin(false);
+        };
     }, []);
 
     return (
         <>
         <Layout>
             <MainST.MainBg path={Ellipse}>
-
                 <MainST.ContentZone>
-                <MainST.GuideZone>
-                    <MainST.GuideText>
-                        설문조사 빠르게 끝내고 <br/>
-                        기프티콘 받자!
-                    </MainST.GuideText>
-                    <MainST.GuideButton
-                        onClick={() => {
-                            navigate('/login');
-                        }}
-                    > 로그인하고 시작하기
-                    </MainST.GuideButton>
-                </MainST.GuideZone>
-
+                    {isLogin === true ?
+                    <MainST.GuideZone>
+                        <MainST.GuideText>
+                            설문조사 빠르게 끝내고 <br/>
+                            기프티콘 받자!
+                        </MainST.GuideText>
+                        <MainST.GuideButton
+                            onClick={() => {
+                                navigate('/login');
+                            }}
+                        > 로그인하고 시작하기
+                        </MainST.GuideButton>
+                    </MainST.GuideZone>
+                    :
+                    <MainST.GuideZone>
+                        <MainST.GuideText>
+                            <MainST.NickText>정은</MainST.NickText>&nbsp;님! 설문 참여하고
+                        </MainST.GuideText>
+                        <MainST.GuideText>
+                            커피 한 잔 어때요 ?
+                        </MainST.GuideText>
+                        <MainST.NumberZone>
+                            오늘 참여&nbsp;&nbsp;<MainST.NumberText>12개</MainST.NumberText>&nbsp;
+                            |&nbsp;&nbsp;내 기프티콘&nbsp;&nbsp;<MainST.NumberText>2개</MainST.NumberText>
+                        </MainST.NumberZone>
+                        <MainST.PointText>
+                            13,500
+                            <MainST.Logo2 src={Logo2}/>
+                        </MainST.PointText>
+                    </MainST.GuideZone>
+                    }
                 <MainST.CharacterZone>
                     <MainST.Character src={Character}/>
                 </MainST.CharacterZone>

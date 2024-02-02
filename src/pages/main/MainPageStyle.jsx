@@ -43,17 +43,51 @@ export const GuideZone = styled.div`
   margin-top: 100px;
 
   z-index: 900;
+  color: var(--white-default);
 `;
 
 export const GuideText = styled.div`
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  line-height: 35px;
 
-  white-space: nowrap;
-  line-height: 130%;
-
-  color: var(--white-default);
   font-size: var(--font-large);
   font-weight: var(--weight-semi-bold);
+`;
+
+export const NickText = styled.div`
+  font-size: 30px;
+  font-weight: var(--weight-semi-bold);
+`;
+
+export const NumberZone = styled.div`
+  font-size: var(--font-small);
+  font-weight: var(--weight-thin);
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+`;
+
+export const NumberText = styled.div`
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+`;
+
+export const PointText = styled.div`
+  font-size: 28px;
+  font-weight: var(--weight-semi-bold);
+  color: var(--yellow-money);
+
+  display: flex;
+  align-items: center;
+`;
+
+export const Logo2 = styled.img`
+  width: 25px;
+  height: 25px;
+  margin-left: 8px;
 `;
 
 export const GuideButton = styled.div`
