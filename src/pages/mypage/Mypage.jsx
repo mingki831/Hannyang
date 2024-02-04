@@ -32,11 +32,11 @@ export default function Mypage() {
         </MypageST.ProfileZone>
         <MypageST.BtnZone>
             <MypageST.ProfileBtn>
-                <MypageST.DetailBtn>
+                <MypageST.DetailBtn onClick={()=>navigate('/mygifticon')}>
                   기프티콘 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
                   <MypageST.NumberText>2</MypageST.NumberText>
                 </MypageST.DetailBtn>
-                <MypageST.DetailBtn>
+                <MypageST.DetailBtn onClick={()=>navigate('/mypoint')}>
                   포인트 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
                   <MypageST.NumberText>13,200</MypageST.NumberText>
                 </MypageST.DetailBtn>

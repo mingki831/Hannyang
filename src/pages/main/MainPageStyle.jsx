@@ -50,10 +50,10 @@ export const GuideText = styled.div`
   position: relative;
   display: flex;
   align-items: flex-end;
-  line-height: 35px;
+  line-height: 30px;
 
-  font-size: var(--font-large);
-  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-medium);
+  font-weight: var(--weight-regular);
 `;
 
 export const NickText = styled.div`
