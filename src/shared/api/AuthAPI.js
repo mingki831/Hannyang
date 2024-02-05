@@ -20,7 +20,6 @@ export const login = async ({ email, password }) => {
             JSON.stringify({
                 'email': email,
                 'password': password}));
-    console.log(loginRes);
     return loginRes;
 };
 
@@ -42,7 +41,7 @@ export const logout = async() => {
     const LogoutRes = 
         await getInstance().post(
             `/api/${basePath}/auth/logout`);
-    return LogoutRes.data;
+    return LogoutRes;
 }
 
 /**  탈퇴  */

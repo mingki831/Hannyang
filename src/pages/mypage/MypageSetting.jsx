@@ -28,11 +28,12 @@ export default function MypageSetting({closeSettModal}) {
     const LogoutHandler = async() => {
       logout()
       .then(response => {
+            console.log(response);
             closeSettModal();
             navigate('/');
             removeCookieToken();
             dispatch(DELETE_TOKEN());
-            dispatch(DELETE_USER());        
+            //dispatch(DELETE_USER());        
       }).catch(error => {
         console.log('로그아웃 실패', error)
       });

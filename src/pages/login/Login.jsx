@@ -12,7 +12,7 @@ import { useInput } from '../../hooks/useInput';
 import { login } from '../../shared/api/AuthAPI';
 import { setRefreshToken } from '../../shared/storage/Cookie';
 import { SET_TOKEN } from '../../redux/modules/AuthSlice';
-import { SET_USER } from '../../redux/modules/UserSlice';
+//import { SET_USER } from '../../redux/modules/UserSlice';
 
 export default function SignUp() {
 
@@ -35,10 +35,9 @@ export default function SignUp() {
         login({email: email, password: pw})
         .then(response => {
             if (parseInt(Number(response.status) / 100) === 2) {
-                console.log(response.headers);
-                setRefreshToken(response.headers.refresh_token);
-                dispatch(SET_TOKEN(response.headers.authorization));
-                dispatch(SET_USER(response.userInfo));
+                setRefreshToken(response.headers['authorization']);
+                dispatch(SET_TOKEN(response.headers['refresh_token']));
+                //dispatch(SET_USER(response.userInfo));
                 navigate('/');
                 console.log("로그인 성공 !!");
             } else {
@@ -49,7 +48,7 @@ export default function SignUp() {
         }).catch((error) => {
             setIsCantLogin(true);
             resetInput();
-            console.log("로그인 실패 여기로 온다고?");
+            console.log("로그인 실패");
         });
     }
 

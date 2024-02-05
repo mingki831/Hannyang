@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-//import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as MainST from './MainPageStyle';
 
@@ -14,6 +14,10 @@ import Logo2 from '../../components/imgs/Logo2.png'
 export default function MainPage() {
 
     //const nickname = useSelector((state) => state.user.nickname);
+    const authenticated = useSelector((state) => state.token.authenticated);
+    const accessToken = useSelector((state) => state.token.accessToken);
+    const expireTime = useSelector((state) => state.token.expireTime);
+
     const token = getCookieToken();
     const [isLogin, setIsLogin] = useState(false);
 
@@ -22,20 +26,27 @@ export default function MainPage() {
 
     useEffect(() => {
         setPage('MainPage');
-        //로그인여부
+        console.log(authenticated);
+        console.log(accessToken);
+        console.log(expireTime);
+        console.log(token);
+    }, []);
+
+    useEffect(() => {
+        setPage('MainPage');
         if (token !== null && token !== undefined) {
           setIsLogin(true);
         } else {
           setIsLogin(false);
         };
-    }, []);
+    }, [token]);
 
     return (
         <>
         <Layout>
             <MainST.MainBg path={Ellipse}>
                 <MainST.ContentZone>
-                    {isLogin === true ?
+                    {isLogin === false ?
                     <MainST.GuideZone>
                         <MainST.GuideText>
                             설문조사 빠르게 끝내고 <br/>
