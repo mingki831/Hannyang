@@ -186,3 +186,54 @@ export const NickInput = styled.input`
   border-radius: 12px;
   background-color: var(--grey-blur-light);
 `;
+
+export const KaKaoBtn = styled.div`
+  width: 100%;
+  height: 56px;
+  margin-bottom: 12px;
+
+  background-color: #FEE500;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const QnaTitleZone = styled.div`
+  width: 100%;
+  height: 50px;
+  margin-top: 8px;
+  padding: 8px;
+
+  border-bottom: 1px solid var(--grey-blur-light);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const QnaImg = styled.div`
+  width: 36px;
+  height: 36px;
+  border-radius: 20px;
+  background-color: var(--grey-light);
+`;
+
+export const QnaTitle = styled.div`
+  position: absolute;
+  left: 64px;
+  color: var(--grey-dark);
+  font-size: var(--font-regular);
+`;
+
+export const AnswerZone = styled.div`
+  width: 100%;
+  height: 70px;
+  margin-top: 8px;
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background-color: var(--grey-blur-light);
+`;

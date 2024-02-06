@@ -1,12 +1,12 @@
 import { useContext, useEffect } from 'react';
 
-import { PageContext } from '../../components/context/PageContext';
+import { PageContext } from '../../../components/context/PageContext';
 
-import * as MyInfoST from './MyInfoStyle';
-import * as SignST from '../signup/SignUpStyle';
-import * as MainST from '../main/MainPageStyle'
-import Layout from '../../components/layout/Layout';
-import Logo2 from '../../components/imgs/Logo2.png'
+import * as MyInfoST from '../style/MyInfoStyle';
+import * as SignST from '../../signup/SignUpStyle';
+import * as MainST from '../../main/MainPageStyle'
+import Layout from '../../../components/layout/Layout';
+import Logo2 from '../../../components/imgs/Logo2.png'
 
 export default function Mypoint() {
 
@@ -24,7 +24,7 @@ export default function Mypoint() {
             <MyInfoST.MainText>
                 <MyInfoST.NickText>정은</MyInfoST.NickText>&nbsp;님의
             </MyInfoST.MainText>
-            <MyInfoST.MainText style={{marginBottom:'16px'}}>
+            <MyInfoST.MainText style={{marginBottom:'12px'}}>
                 포인트 내역
             </MyInfoST.MainText>
             <MainST.PointText>

@@ -1,11 +1,11 @@
-import * as ModalST from './ModalStyle';
+import * as ModalST from '../style/ModalStyle';
 import { useNavigate } from 'react-router-dom';
 
-import { logout, withdraw } from '../../shared/api/AuthAPI';
-import { removeCookieToken } from '../../shared/storage/Cookie';
+import { logout, withdraw } from '../../../shared/api/AuthAPI';
+import { removeCookieToken } from '../../../shared/storage/Cookie';
 import { useDispatch } from 'react-redux';
-import { DELETE_TOKEN } from '../../redux/modules/AuthSlice';
-import { DELETE_USER } from '../../redux/modules/UserSlice';
+import { DELETE_TOKEN } from '../../../redux/modules/AuthSlice';
+import { DELETE_USER } from '../../../redux/modules/UserSlice';
 
 export default function MypageSetting({closeSettModal}) {
 
@@ -15,11 +15,12 @@ export default function MypageSetting({closeSettModal}) {
     const WithdrawHandler = async() => {
         withdraw()
         .then(response => {
+            console.log(response);
             closeSettModal();
             navigate('/');
             removeCookieToken();
             dispatch(DELETE_TOKEN());
-            dispatch(DELETE_USER());
+            //dispatch(DELETE_USER());
         }).catch(error => {
             console.log('탈퇴 실패', error)
         });   

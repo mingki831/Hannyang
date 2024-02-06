@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { PageContext } from '../../components/context/PageContext';
 
-import * as MypageST from './MypageStyle';
+import * as MypageST from './style/MypageStyle';
 import * as SignST from '../signup/SignUpStyle';
 import Layout from '../../components/layout/Layout';
 import SVG from '../../components/imgs/SVG';
@@ -42,7 +42,7 @@ export default function Mypage() {
                 </MypageST.DetailBtn>
                 <MypageST.DetailBtn>
                   쿠폰 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
-                  <MypageST.NumberText>2</MypageST.NumberText>
+                  <MypageST.NumberText>-</MypageST.NumberText>
                 </MypageST.DetailBtn>
             </MypageST.ProfileBtn>
             <MypageST.ProfileBtn>
@@ -51,11 +51,11 @@ export default function Mypage() {
         </MypageST.BtnZone>
         <MypageST.Line/>
         <MypageST.HelpZone>
-            <MypageST.HelpBtn>
+            <MypageST.HelpBtn onClick={()=>navigate('/inquiryPage')}>
               궁금해요 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
             </MypageST.HelpBtn>
             <MypageST.HelpBtn>
-              알립니다 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
+              공지사항 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
             </MypageST.HelpBtn>
         </MypageST.HelpZone>
     </SignST.ContentZone>

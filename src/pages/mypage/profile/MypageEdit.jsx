@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { PageContext } from '../../components/context/PageContext';
+import { PageContext } from '../../../components/context/PageContext';
 
-import * as MypageST from './MypageStyle';
-import * as SignST from '../signup/SignUpStyle';
-import Layout from '../../components/layout/Layout';
-import Setting from '../../components/imgs/Setting.png'
+import * as MypageST from '../style/MypageStyle';
+import * as SignST from '../../signup/SignUpStyle';
+import Layout from '../../../components/layout/Layout';
+import Setting from '../../../components/imgs/Setting.png'
 import MyPicEdit from './MyPicEdit'
 import MypageSetting from './MypageSetting';
 

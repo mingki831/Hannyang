@@ -9,8 +9,10 @@ import SignUp from '../../pages/signup/SignUp';
 import Login from '../../pages/login/Login'
 import SignUpSuccess from '../../pages/signup/SignUpSuccess';
 import Mypage from '../../pages/mypage/Mypage';
-import MypageEdit from '../../pages/mypage/MypageEdit';
-import Mypoint from '../../pages/mypage/Mypoint';
+import MypageEdit from '../../pages/mypage/profile/MypageEdit';
+import Mypoint from '../../pages/mypage/collect/Mypoint';
+import Mygifticon from '../../pages/mypage/collect/Mygifticon';
+import InquiryPage from '../../pages/mypage/admin/InquiryPage';
 
 const Router = () => {
     return (
@@ -34,6 +36,8 @@ const Router = () => {
                 <Route path='/mypage' element={<Mypage/>}/>
                 <Route path='/mypageEdit' element={<MypageEdit/>}/>
                 <Route path='/mypoint' element={<Mypoint/>}/>
+                <Route path='/mygifticon' element={<Mygifticon/>}/>
+                <Route path='/inquiryPage' element={<InquiryPage/>}/>
             </Routes>
         </BrowserRouter>
         </>
