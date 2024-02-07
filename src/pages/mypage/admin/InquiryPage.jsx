@@ -40,7 +40,7 @@ export default function Mypoint() {
     }
 
     useEffect(() => {
-        setPage('mypoint');
+        setPage('inquiryPage');
     }, []);
 
     return (

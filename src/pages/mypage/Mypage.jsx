@@ -54,7 +54,7 @@ export default function Mypage() {
             <MypageST.HelpBtn onClick={()=>navigate('/inquiryPage')}>
               궁금해요 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
             </MypageST.HelpBtn>
-            <MypageST.HelpBtn>
+            <MypageST.HelpBtn onClick={()=>navigate('/noticePage')}>
               공지사항 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
             </MypageST.HelpBtn>
         </MypageST.HelpZone>

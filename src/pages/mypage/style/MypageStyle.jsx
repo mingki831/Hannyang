@@ -238,3 +238,36 @@ export const AnswerZone = styled.div`
   color: var(--grey-dark);
   font-size: var(--font-small);
 `;
+
+export const NoticeBox = styled.div`
+  width: 100%;
+  height: fit-content;
+  padding: 16px;
+  margin-bottom: 16px;
+
+  color: var(--blue-normal);
+  font-size: var(--font-small);
+
+  border-radius: 12px;
+  box-shadow: 0px 0px 8px 0px rgba(187, 187, 187, 0.50);
+`;
+
+export const NoticeTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const NoticeCate = styled.div`
+  font-weight: var(--weight-bold);
+`;
+
+export const NoticeBottom = styled.div`
+  margin-top: 8px;
+  padding: 0 8px 0 8px;
+`;
+
+export const NoticeTitle = styled.div`
+  margin-bottom: 8px;
+  font-weight: var(--weight-bold);
+  font-size: var(--font-regular)
+`;
