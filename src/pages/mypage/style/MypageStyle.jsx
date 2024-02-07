@@ -231,9 +231,10 @@ export const AnswerZone = styled.div`
   width: 100%;
   height: 70px;
   margin-top: 8px;
-  padding: 12px;
-
+  padding: 16px;
   border-radius: 12px;
 
   background-color: var(--grey-blur-light);
+  color: var(--grey-dark);
+  font-size: var(--font-small);
 `;
