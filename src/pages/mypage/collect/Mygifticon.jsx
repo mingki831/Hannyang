@@ -12,12 +12,20 @@ export default function Mygifticon() {
     const { setPage } = useContext(PageContext);
 
     const [isOpenModal, setIsOpenModal] = useState(false);
+    const [isUsed, setIsUsed] = useState(false);
 
     const openModal = () => {
         setIsOpenModal(true);
     }
     const closeModal = () => {
         setIsOpenModal(false);
+    }
+
+    const usedBtn = () => {
+        setIsUsed(true);
+    }
+    const unUsedBtn = () => {
+        setIsUsed(false);
     }
 
     useEffect(() => {
@@ -42,8 +50,16 @@ export default function Mygifticon() {
         </MyInfoST.MainZone>
         <MyInfoST.HistoryZone>
             <MyInfoST.SelectZone>
-                <MyInfoST.Select>사용 전</MyInfoST.Select>
-                <MyInfoST.Select>사용 완료</MyInfoST.Select>
+                <MyInfoST.Select
+                    onClick={unUsedBtn}
+                    focused ={isUsed === false ? 'unused':'used'}>
+                    사용 전
+                </MyInfoST.Select>
+                <MyInfoST.Select
+                    onClick={usedBtn}
+                    focused ={isUsed === true ? 'unused':'used'}>
+                    사용 완료
+                </MyInfoST.Select>
             </MyInfoST.SelectZone>
             <MyInfoST.GifticonZone>
                 <MyInfoST.GifticonBox onClick={openModal}>

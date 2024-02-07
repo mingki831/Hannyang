@@ -318,7 +318,7 @@ export default function SignUp() {
                     </SignST.CautionText>
                 ) : null}
 
-                <SignST.SubmitBtn allPass={allPass} onClick={SubmitHandler}>
+                <SignST.SubmitBtn focused={allPass === true ? 'allPassed':'unPassed'} onClick={SubmitHandler}>
                     가입하기
                 </SignST.SubmitBtn>
 

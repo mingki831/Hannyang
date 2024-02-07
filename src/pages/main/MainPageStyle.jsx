@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import Ellipse from '../../components/imgs/home/ellipse.png'
 
 export const MainBg = styled.div`
   position: absolute;
 
-  background-image: ${(props) => `url(${props.path})`};
+  background-image: url(${Ellipse});
   background-position: center;
   background-size: 1500px 100%;
   background-repeat: no-repeat;

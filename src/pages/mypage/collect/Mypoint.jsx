@@ -42,7 +42,10 @@ export default function Mypoint() {
                 <MyInfoST.PlusPoint>- 3000</MyInfoST.PlusPoint>
             </MyInfoST.HistoryBox>
             <MyInfoST.HistoryBox>
-                <MyInfoST.HisCateText>기프티콘 구매</MyInfoST.HisCateText>
+                <MyInfoST.HisCateText>
+                    설문조사 참여
+                    <MyInfoST.HistoryText>대학생 봉사시간에 대한 설문조사</MyInfoST.HistoryText>
+                </MyInfoST.HisCateText>
                 <MyInfoST.MinusPoint>+ 500</MyInfoST.MinusPoint>
             </MyInfoST.HistoryBox>
         </MyInfoST.HistoryZone>

@@ -7,7 +7,6 @@ import { getCookieToken } from '../../shared/storage/Cookie';
 import Layout from '../../components/layout/Layout';
 import { PageContext } from '../../components/context/PageContext';
 
-import Ellipse from '../../components/imgs/home/ellipse.png'
 import Character from '../../components/imgs/home/character.png'
 import Logo2 from '../../components/imgs/Logo2.png'
 
@@ -44,7 +43,7 @@ export default function MainPage() {
     return (
         <>
         <Layout>
-            <MainST.MainBg path={Ellipse}>
+            <MainST.MainBg>
                 <MainST.ContentZone>
                     {isLogin === false ?
                     <MainST.GuideZone>

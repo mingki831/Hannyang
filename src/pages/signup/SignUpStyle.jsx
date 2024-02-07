@@ -97,7 +97,7 @@ export const SubmitBtn = styled.div`
   width: 100%;
   height: 60px;
   bottom: 20px;
-  visibility: ${(props) => (props.allPass === true ? 'visible' : 'hidden')};
+  visibility: ${(props) => (props.focused === 'allPassed' ? 'visible' : 'hidden')};
 
   font-size: var(--font-regular);
   font-weight: var(--weight-semi-bold);

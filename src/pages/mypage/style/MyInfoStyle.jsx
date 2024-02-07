@@ -45,12 +45,13 @@ export const Select = styled.div`
   align-items: center;
   justify-content: center;
 
-  color: var(--grey-normal);
+  background-color: ${(props) => (props.focused === 'unused' ? 'var(--yellow-money)' : '')};
+  color: ${(props) => (props.focused === 'unused' ? 'var(--grey-dark)' : 'var(--grey-normal)')};
   font-weight: var(--weight-semi-bold);
   font-size: var(--font-small);
 
   border-radius: 8px;
-  border: 1px solid var(--grey-light);
+  border: ${(props) => (props.focused === 'unused' ? '' : '1px solid var(--grey-light)')};
 `;
 
 export const DateText = styled.div`
