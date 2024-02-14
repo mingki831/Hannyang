@@ -1,4 +1,5 @@
 import * as ModalST from '../style/ModalStyle';
+import * as ShopST from '../../shop/ShopStyle';
 import * as MyInfoST from '../style/MyInfoStyle';
 
 export default function MypageSetting({closeModal}) {
@@ -12,8 +13,8 @@ export default function MypageSetting({closeModal}) {
             <ModalST.ModalBox>
                 <ModalST.Modalname2>
                     <ModalST.ModalImg/>
-                    <MyInfoST.GiftCateText>스타벅스</MyInfoST.GiftCateText>
-                    <MyInfoST.GifticonText>카페아메리카노 T</MyInfoST.GifticonText>
+                    <ShopST.GiftCateText>스타벅스</ShopST.GiftCateText>
+                    <ShopST.GifticonText>카페아메리카노 T</ShopST.GifticonText>
                     <MyInfoST.LimitText>24.05.01 까지</MyInfoST.LimitText>
                 </ModalST.Modalname2>
                 <ModalST.Option2>

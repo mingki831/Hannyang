@@ -45,13 +45,13 @@ export const Select = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: ${(props) => (props.focused === 'unused' ? 'var(--yellow-money)' : '')};
-  color: ${(props) => (props.focused === 'unused' ? 'var(--grey-dark)' : 'var(--grey-normal)')};
+  background-color: ${(props) => (props.focused === 'true' ? 'var(--yellow-money)' : '')};
+  color: ${(props) => (props.focused === 'true' ? 'var(--grey-dark)' : 'var(--grey-normal)')};
   font-weight: var(--weight-semi-bold);
   font-size: var(--font-small);
 
   border-radius: 8px;
-  border: ${(props) => (props.focused === 'unused' ? '' : '1px solid var(--grey-light)')};
+  border: ${(props) => (props.focused === 'true' ? '' : '1px solid var(--grey-light)')};
 `;
 
 export const DateText = styled.div`
@@ -73,51 +73,11 @@ export const HistoryBox = styled.div`
   box-shadow: 0px 0px 8px 0px rgba(187, 187, 187, 0.50);
 `;
 
-export const GifticonZone = styled.div`
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`;
-
-export const GifticonBox = styled.div`
-  width: 48%;
-  height: 200px;
-  margin: 8px 0 8px 0;
-  padding: 16px;
-
-  border-radius: 12px;
-  box-shadow: 0px 0px 8px 0px rgba(187, 187, 187, 0.50);
-`;
-
-export const GifticonImg = styled.div`
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  margin: auto;
-  margin-bottom: 8px;
-
-  background-color: lightblue;
-`;
-
 export const HisCateText = styled.div`
   color: var(--grey-dark);
   font-size: var(--font-small);
   display: flex;
   align-items: center;
-`;
-
-export const GiftCateText = styled.div`
-  color: var(--grey-dark);
-  font-size: var(--font-small);
-`;
-
-export const GifticonText = styled.div`
-  color: var(--grey-dark);
-  font-size: var(--font-regular);
-  font-weight: var(--weight-regular);
-  margin: 4px 0 8px 0;
 `;
 
 export const HistoryText = styled.div`

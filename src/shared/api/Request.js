@@ -15,10 +15,10 @@ export default function getInstance() {
         Refresh_Token: null,
     };
 
-    if (authorization !== undefined && authorization !== null) {
+    if (authorization !== undefined || authorization !== null) {
         headers.Authorization = authorization;
     }
-    if (refreshToken !== undefined && refreshToken !== null) {
+    if (refreshToken !== undefined || refreshToken !== null) {
         headers.Refresh_Token = refreshToken;
     }
 

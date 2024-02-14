@@ -85,6 +85,18 @@ export const Cancel2 = styled.div`
   border-bottom-right-radius: 16px;
 `;
 
+export const Cancel3 = styled.div`
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--grey-normal);
+  background-color: var(--grey-light);
+  border-bottom-left-radius: 16px;
+`;
+
 export const UseBtn = styled.div`
   width: 50%;
 
@@ -95,6 +107,18 @@ export const UseBtn = styled.div`
   color: var(--white-default);
   background-color: var(--blue-normal);
   border-bottom-left-radius: 16px;
+`;
+
+export const BuyBtn = styled.div`
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--white-default);
+  background-color: var(--blue-normal);
+  border-bottom-right-radius: 16px;
 `;
 
 export const Option2 = styled.div`
@@ -112,6 +136,12 @@ export const Option2 = styled.div`
 
 export const Option2End = styled.div`
   color: var(--grey-normal);
+`;
+
+export const Option2Price = styled.div`
+  color: var(--grey-dark);
+  font-size: var(--font-medium);
+  font-weight: var(--weight-regular);
   border-top: 1px solid var(--grey-blur-light);
 `;
 
@@ -128,4 +158,54 @@ export const ModalImg = styled.div`
   height: 180px;
   margin-bottom: 24px;
   background-color: lightpink;
+`;
+
+export const ShopPrice = styled.div`
+  width: fit-content;
+  padding: 4px 10px 4px 10px;
+  margin: auto;
+
+  color: var(--blue-normal);
+  font-size: var(--font-small);
+
+  background-color: var(--yellow-money);
+  border-radius: 20px;
+`;
+
+export const DropDown = styled.div`
+  width: 70px;
+  height: 35px;
+`;
+
+export const DdContent = styled.div`
+  width: 70px;
+  height: 35px;
+  padding: 10px 10px 10px 24px;
+  margin-bottom: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--grey-blur-light);
+  color: var(--grey-dark);
+  border-radius: 6px;
+`;
+
+export const Ul = styled.div`
+  position: absolute;
+  width: 70px;
+
+  background-color: var(--grey-blur-light);
+  color: var(--grey-dark);
+  border-radius: 6px;
+  border-top: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+`;
+
+export const Li = styled.div`
+  padding: 10px;
 `;

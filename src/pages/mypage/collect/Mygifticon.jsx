@@ -4,6 +4,7 @@ import { PageContext } from '../../../components/context/PageContext';
 
 import * as MyInfoST from '../style/MyInfoStyle';
 import * as SignST from '../../signup/SignUpStyle';
+import * as ShopST from '../../shop/ShopStyle';
 import Layout from '../../../components/layout/Layout';
 import MyGifticonUse from './MygifticonUse';
 
@@ -19,13 +20,6 @@ export default function Mygifticon() {
     }
     const closeModal = () => {
         setIsOpenModal(false);
-    }
-
-    const usedBtn = () => {
-        setIsUsed(true);
-    }
-    const unUsedBtn = () => {
-        setIsUsed(false);
     }
 
     useEffect(() => {
@@ -49,38 +43,29 @@ export default function Mygifticon() {
             </MyInfoST.MainText>
         </MyInfoST.MainZone>
         <MyInfoST.HistoryZone>
+            
             <MyInfoST.SelectZone>
                 <MyInfoST.Select
-                    onClick={unUsedBtn}
-                    focused ={isUsed === false ? 'unused':'used'}>
+                    onClick={()=>{setIsUsed(false);}}
+                    focused ={isUsed === false ? 'true':''}>
                     사용 전
                 </MyInfoST.Select>
                 <MyInfoST.Select
-                    onClick={usedBtn}
-                    focused ={isUsed === true ? 'unused':'used'}>
+                    onClick={()=>{setIsUsed(true);}}
+                    focused ={isUsed === true ? 'true':''}>
                     사용 완료
                 </MyInfoST.Select>
             </MyInfoST.SelectZone>
-            <MyInfoST.GifticonZone>
-                <MyInfoST.GifticonBox onClick={openModal}>
-                    <MyInfoST.GifticonImg/>
-                    <MyInfoST.GiftCateText>스타벅스</MyInfoST.GiftCateText>
-                    <MyInfoST.GifticonText>카페아메리카노 T</MyInfoST.GifticonText>
+
+            <ShopST.GifticonZone>
+                <ShopST.GifticonBox onClick={openModal}>
+                    <ShopST.GifticonImg/>
+                    <ShopST.GiftCateText>스타벅스</ShopST.GiftCateText>
+                    <ShopST.GifticonText>카페아메리카노 T</ShopST.GifticonText>
                     <MyInfoST.LimitText>24.05.01 까지</MyInfoST.LimitText>
-                </MyInfoST.GifticonBox>
-                <MyInfoST.GifticonBox>
-                    <MyInfoST.GifticonImg/>
-                    <MyInfoST.HisCateText>스타벅스</MyInfoST.HisCateText>
-                    <MyInfoST.GifticonText>카페아메리카노 T</MyInfoST.GifticonText>
-                    <MyInfoST.LimitText>24.05.01 까지</MyInfoST.LimitText>
-                </MyInfoST.GifticonBox>
-                <MyInfoST.GifticonBox>
-                    <MyInfoST.GifticonImg/>
-                    <MyInfoST.HisCateText>스타벅스</MyInfoST.HisCateText>
-                    <MyInfoST.GifticonText>카페아메리카노 T</MyInfoST.GifticonText>
-                    <MyInfoST.LimitText>24.05.01 까지</MyInfoST.LimitText>
-                </MyInfoST.GifticonBox>
-            </MyInfoST.GifticonZone>
+                </ShopST.GifticonBox>
+            </ShopST.GifticonZone>
+
         </MyInfoST.HistoryZone>
     </SignST.ContentZone>
     </Layout>

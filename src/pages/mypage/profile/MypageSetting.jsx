@@ -29,7 +29,6 @@ export default function MypageSetting({closeSettModal}) {
     const LogoutHandler = async() => {
       logout()
       .then(response => {
-            console.log(response);
             closeSettModal();
             navigate('/');
             removeCookieToken();
