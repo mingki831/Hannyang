@@ -15,6 +15,7 @@ import Mygifticon from '../../pages/mypage/collect/Mygifticon';
 import InquiryPage from '../../pages/mypage/admin/InquiryPage';
 import NoticePage from '../../pages/mypage/admin/NoticePage';
 import Shop from '../../pages/shop/Shop';
+import Researcher from '../../pages/researcher/Researcher';
 
 const Router = () => {
     return (
@@ -42,6 +43,7 @@ const Router = () => {
                 <Route path='/inquiryPage' element={<InquiryPage/>}/>
                 <Route path='/noticePage' element={<NoticePage/>}/>
                 <Route path='/shop' element={<Shop/>}/>
+                <Route path='/researcher' element={<Researcher/>}/>
             </Routes>
         </BrowserRouter>
         </>

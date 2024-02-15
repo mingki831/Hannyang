@@ -64,9 +64,17 @@ export const emailDouble = async (email) => {
 export const nickDouble = async (nick) => {
     const nickDbRes =
         await getInstance().get(
-            `/api/v1/member/nickname/${nick}`);
+            `/api/${basePath}/member/nickname/${nick}`);
     return nickDbRes.data;
 }
+
+/**  회원정보  */
+export const UserInfo = async (nick) => {
+    const res =
+        await getInstance().post(
+            `/api/${basePath}/member/${nick}/profile`);
+    return res;
+};
 
 /**  토큰 재발급  */
 const statusError = {

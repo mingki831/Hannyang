@@ -13,9 +13,6 @@ import Logo2 from '../../components/imgs/Logo2.png'
 export default function MainPage() {
 
     //const nickname = useSelector((state) => state.user.nickname);
-    const authenticated = useSelector((state) => state.token.authenticated);
-    const accessToken = useSelector((state) => state.token.accessToken);
-    const expireTime = useSelector((state) => state.token.expireTime);
 
     const token = getCookieToken();
     const [isLogin, setIsLogin] = useState(false);
@@ -25,14 +22,9 @@ export default function MainPage() {
 
     useEffect(() => {
         setPage('MainPage');
-        console.log(authenticated);
-        console.log(accessToken);
-        console.log(expireTime);
-        console.log(token);
     }, []);
 
     useEffect(() => {
-        setPage('MainPage');
         if (token !== null && token !== undefined) {
           setIsLogin(true);
         } else {
@@ -81,7 +73,7 @@ export default function MainPage() {
                 </MainST.CharacterZone>
                 
                 <MainST.OptionBox>
-                    <MainST.Option1>설문 조사 <br/> 올리기</MainST.Option1>
+                    <MainST.Option1 onClick={()=>{navigate('/researcher')}}>설문 조사 <br/> 올리기</MainST.Option1>
                     <MainST.Option2>설문 조사 <br/> 참여하기</MainST.Option2>
                 </MainST.OptionBox>
 
