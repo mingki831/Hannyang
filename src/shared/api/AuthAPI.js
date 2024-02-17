@@ -69,10 +69,10 @@ export const nickDouble = async (nick) => {
 }
 
 /**  회원정보  */
-export const UserInfo = async (nick) => {
+export const userInfo = async (id) => {
     const res =
-        await getInstance().post(
-            `/api/${basePath}/member/${nick}/profile`);
+        await getInstance().get(
+            `/api/${basePath}/member/${id}/profile`);
     return res;
 };
 

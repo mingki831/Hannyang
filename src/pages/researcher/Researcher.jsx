@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import * as ResrchST from './ResrchStyle';
 import * as SignST from '../signup/SignUpStyle'
 import Layout from '../../components/layout/Layout';
@@ -8,6 +10,7 @@ import { PageContext } from '../../components/context/PageContext';
 export default function Researcher() {
 
     const { setPage } = useContext(PageContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setPage('Researcher');
@@ -27,7 +30,7 @@ export default function Researcher() {
                     응답자 수가 미달된 만큼 무조건 환급해드립니다.
                     <ResrchST.GuideImg2/>
                 </ResrchST.GuideBox>
-                <ResrchST.StartBtn>
+                <ResrchST.StartBtn onClick={()=>{navigate('/step1')}}>
                     설문조사 접수하기
                 </ResrchST.StartBtn>
             </SignST.ContentZone>

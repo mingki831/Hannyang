@@ -41,6 +41,8 @@ export const NotLogoText = styled.div`
   color: var(--grey-dark);
   font-size: var(--font-large);
   font-weight: var(--weight-thin);
+  display: flex;
+  align-items: center;
 
   margin-bottom: 32px;
 `;

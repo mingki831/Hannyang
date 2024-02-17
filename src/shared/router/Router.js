@@ -16,6 +16,7 @@ import InquiryPage from '../../pages/mypage/admin/InquiryPage';
 import NoticePage from '../../pages/mypage/admin/NoticePage';
 import Shop from '../../pages/shop/Shop';
 import Researcher from '../../pages/researcher/Researcher';
+import Step1 from '../../pages/researcher/Step1';
 
 const Router = () => {
     return (
@@ -44,6 +45,7 @@ const Router = () => {
                 <Route path='/noticePage' element={<NoticePage/>}/>
                 <Route path='/shop' element={<Shop/>}/>
                 <Route path='/researcher' element={<Researcher/>}/>
+                <Route path='/step1' element={<Step1/>}/>
             </Routes>
         </BrowserRouter>
         </>

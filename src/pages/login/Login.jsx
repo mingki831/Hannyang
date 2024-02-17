@@ -10,9 +10,10 @@ import Logo1 from '../../components/imgs/Logo1.png';
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
 import { login } from '../../shared/api/AuthAPI';
+import { userInfo } from '../../shared/api/AuthAPI';
 import { setRefreshToken } from '../../shared/storage/Cookie';
 import { SET_TOKEN } from '../../redux/modules/AuthSlice';
-//import { SET_USER } from '../../redux/modules/UserSlice';
+import { SET_USER } from '../../redux/modules/UserSlice';
 
 export default function SignUp() {
 
@@ -37,7 +38,22 @@ export default function SignUp() {
             if (parseInt(Number(response.status) / 100) === 2) {
                 setRefreshToken(response.headers['authorization']);
                 dispatch(SET_TOKEN(response.headers['refresh_token']));
-                //dispatch(SET_USER(response.userInfo));
+                userInfo(response.data.memberId)
+                .then(res => {
+                    if (parseInt(Number(res.status) / 100) === 2) {
+                        console.log(res);
+                        //dispatch(SET_USER(res.data));
+                        console.log("정보 받아오기 성공 !!");
+                    } else {
+                        setIsCantLogin(true);
+                        resetInput();
+                        console.log("유저 정보 받아오기 실패");
+                    }
+                }).catch((error) => {
+                    setIsCantLogin(true);
+                    resetInput();
+                    console.log("유저 정보 받아오기 실패");
+                })
                 navigate('/');
                 console.log("로그인 성공 !!");
             } else {
@@ -87,7 +103,7 @@ export default function SignUp() {
                 {/* 로그인 성공여부 */}
                 {(isCantLogin === true) ? (
                     <LoginST.CautionText>
-                        <SVG name='Caution' size='15'/>
+                        <SVG name='Caution' size='15' color='var(--red-caution)'/>
                         이메일과 비밀번호를 다시 확인해주세요 !
                     </LoginST.CautionText>
                 ) : null}

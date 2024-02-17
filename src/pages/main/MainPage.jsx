@@ -22,15 +22,12 @@ export default function MainPage() {
 
     useEffect(() => {
         setPage('MainPage');
-    }, []);
-
-    useEffect(() => {
         if (token !== null && token !== undefined) {
-          setIsLogin(true);
-        } else {
-          setIsLogin(false);
-        };
-    }, [token]);
+            setIsLogin(true);
+          } else {
+            setIsLogin(false);
+          };
+    }, []);
 
     return (
         <>

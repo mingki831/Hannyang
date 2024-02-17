@@ -60,3 +60,70 @@ export const StartBtn = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const ProgressBar = styled.img`
+  width: 220px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+`;
+
+export const FormIcon = styled.img`
+  width: 45px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+`;
+
+export const CheckText = styled.div`
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--blue-normal);
+  font-size: var(--font-micro);
+  font-weight: var(--weight-regular);
+  white-space: nowrap;
+`;
+
+export const ButtonZone = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const CancelBtn = styled.div`
+  width: 47%;
+  height: 56px;
+  border-radius: 12px;
+
+  color: var(--grey-dark);
+  background-color: var(--grey-light);
+  font-weight: var(--weight-semi-bold);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const NextBtn = styled.div`
+  width: 47%;
+  height: 56px;
+  border-radius: 12px;
+  
+  color: var(--white-default);
+  background-color: var(--blue-normal);
+  font-weight: var(--weight-semi-bold);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

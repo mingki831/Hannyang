@@ -232,7 +232,7 @@ export default function SignUp() {
                 {isBeforeInputEm === true ? null : (
                     (isEmailFail === true) ? (
                     <SignST.CautionText>
-                        <SVG name='Caution' size='15'/>
+                        <SVG name='Caution' size='15' color='var(--red-caution)'/>
                         {emCheckText}
                     </SignST.CautionText>
                     ) : (
@@ -254,7 +254,7 @@ export default function SignUp() {
                 {isBeforeInputPw === true ? null : (
                     (isPwFail === true) ? (
                     <SignST.CautionText>
-                        <SVG name='Caution' size='15'/>
+                        <SVG name='Caution' size='15' color='var(--red-caution)'/>
                         {pwCheckText}
                     </SignST.CautionText>
                     ) : (
@@ -276,7 +276,7 @@ export default function SignUp() {
                 {isBeforeInputPwChk === true ? null : (
                     (isPwChkFail === true) ? (
                     <SignST.CautionText>
-                        <SVG name='Caution' size='15'/>
+                        <SVG name='Caution' size='15' color='var(--red-caution)'/>
                         {pwChkCheckText}
                     </SignST.CautionText>
                     ) : (
@@ -299,7 +299,7 @@ export default function SignUp() {
                 {isBeforeInputNick === true ? null : (
                     (isNickFail === true) ? (
                     <SignST.CautionText>
-                        <SVG name='Caution' size='15'/>
+                        <SVG name='Caution' size='15' color='var(--red-caution)'/>
                         {nickCheckText}
                     </SignST.CautionText>
                     ) : (
@@ -313,7 +313,7 @@ export default function SignUp() {
                 {/* 회원가입 실패 */}
                 {(isCantSignIn === true) ? (
                     <SignST.CautionText>
-                        <SVG name='Caution' size='15'/>
+                        <SVG name='Caution' size='15' color='var(--red-caution)'/>
                         오류가 발생하였습니다. 다시 시도해주세요 !
                     </SignST.CautionText>
                 ) : null}
