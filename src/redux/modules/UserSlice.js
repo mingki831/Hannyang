@@ -5,8 +5,8 @@ const initialState = {
   role: null,
   nickname: null,
   email: null,
-  point: null,
-  profileURL: null,
+  point: 0,
+  //profileURL: null,
   // gifticon: null,
   // mySurvey: null,
   // resSurvey: null,
@@ -22,7 +22,7 @@ export const userSlice = createSlice({
       state.nickname = action.payload.nickname;
       state.email = action.payload.email;
       state.point = action.payload.point;
-      state.profileURL = action.payload.profileURL;
+      //state.profileURL = action.payload.profileURL;
       // state.gifticon = action.payload.gifticon;
       // state.mySurvey = action.payload.mySurvey;
       // state.resSurvey = action.payload.resSurvey;
@@ -32,8 +32,8 @@ export const userSlice = createSlice({
       state.role = null;
       state.nickname = null;
       state.email = null;
-      state.point = null;
-      state.profileURL = null;
+      state.point = 0;
+      //state.profileURL = null;
       // state.gifticon = null;
       // state.mySurvey = null;
       // state.resSurvey = null;
@@ -44,7 +44,7 @@ export const userSlice = createSlice({
       state.nickname = action.payload.nickname;
       state.email = action.payload.email;
       state.point = action.payload.point;
-      state.profileURL = action.payload.profileURL;
+      //state.profileURL = action.payload.profileURL;
       // state.gifticon = action.payload.gifticon;
       // state.mySurvey = action.payload.mySurvey;
       // state.resSurvey = action.payload.resSurvey;

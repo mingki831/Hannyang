@@ -41,30 +41,24 @@ export default function SignUp() {
                 userInfo(response.data.memberId)
                 .then(res => {
                     if (parseInt(Number(res.status) / 100) === 2) {
-                        console.log(res);
-                        //dispatch(SET_USER(res.data));
-                        console.log("정보 받아오기 성공 !!");
+                        dispatch(SET_USER(res.data.memberInfo));
+                        console.log(res.data)
                     } else {
                         setIsCantLogin(true);
                         resetInput();
-                        console.log("유저 정보 받아오기 실패");
                     }
                 }).catch((error) => {
                     setIsCantLogin(true);
                     resetInput();
-                    console.log("유저 정보 받아오기 실패");
                 })
                 navigate('/');
-                console.log("로그인 성공 !!");
             } else {
                 setIsCantLogin(true);
                 resetInput();
-                console.log("로그인 실패");
             }
         }).catch((error) => {
             setIsCantLogin(true);
             resetInput();
-            console.log("로그인 실패");
         });
     }
 

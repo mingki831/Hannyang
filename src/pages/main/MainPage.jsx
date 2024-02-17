@@ -11,8 +11,12 @@ import Character from '../../components/imgs/home/character.png'
 import Logo2 from '../../components/imgs/Logo2.png'
 
 export default function MainPage() {
-
-    //const nickname = useSelector((state) => state.user.nickname);
+    const id = useSelector((state) => state.user.id);
+    const role = useSelector((state) => state.user.role);
+    const nickname = useSelector((state) => state.user.nickname);
+    const email = useSelector((state) => state.user.email);
+    const point = useSelector((state) => state.user.point);
+    console.log(point)
 
     const token = getCookieToken();
     const [isLogin, setIsLogin] = useState(false);
@@ -50,7 +54,7 @@ export default function MainPage() {
                     :
                     <MainST.GuideZone>
                         <MainST.GuideText>
-                            <MainST.NickText>정은</MainST.NickText>&nbsp;님! 설문 참여하고
+                            <MainST.NickText>{nickname}</MainST.NickText>&nbsp;님! 설문 참여하고
                         </MainST.GuideText>
                         <MainST.GuideText>
                             커피 한 잔 어때요 ?
@@ -60,7 +64,7 @@ export default function MainPage() {
                             |&nbsp;&nbsp;내 기프티콘&nbsp;&nbsp;<MainST.NumberText>2개</MainST.NumberText>
                         </MainST.NumberZone>
                         <MainST.PointText>
-                            13,500
+                            {point}
                             <MainST.Logo2 src={Logo2}/>
                         </MainST.PointText>
                     </MainST.GuideZone>

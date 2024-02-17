@@ -60,6 +60,7 @@ export const GuideText = styled.div`
 export const NickText = styled.div`
   font-size: 30px;
   font-weight: var(--weight-semi-bold);
+  margin-bottom: 3px;
 `;
 
 export const NumberZone = styled.div`
