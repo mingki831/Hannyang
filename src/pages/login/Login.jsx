@@ -42,7 +42,6 @@ export default function SignUp() {
                 .then(res => {
                     if (parseInt(Number(res.status) / 100) === 2) {
                         dispatch(SET_USER(res.data.memberInfo));
-                        console.log(res.data)
                     } else {
                         setIsCantLogin(true);
                         resetInput();

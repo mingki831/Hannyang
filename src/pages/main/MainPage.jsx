@@ -1,24 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
 import * as MainST from './MainPageStyle';
+import Layout from '../../components/layout/Layout';
 
 import { getCookieToken } from '../../shared/storage/Cookie';
-import Layout from '../../components/layout/Layout';
 import { PageContext } from '../../components/context/PageContext';
 
 import Character from '../../components/imgs/home/character.png'
 import Logo2 from '../../components/imgs/Logo2.png'
 
 export default function MainPage() {
-    const id = useSelector((state) => state.user.id);
-    const role = useSelector((state) => state.user.role);
-    const nickname = useSelector((state) => state.user.nickname);
-    const email = useSelector((state) => state.user.email);
-    const point = useSelector((state) => state.user.point);
-    console.log(point)
 
-    const token = getCookieToken();
+    const nickname = useSelector((state) => state.user.nickname);
+    const point = useSelector((state) => state.user.point);
+    const authenticated = useSelector((state) => state.token.authenticated);
     const [isLogin, setIsLogin] = useState(false);
 
     const { setPage } = useContext(PageContext);
@@ -26,7 +23,7 @@ export default function MainPage() {
 
     useEffect(() => {
         setPage('MainPage');
-        if (token !== null && token !== undefined) {
+        if (authenticated === true) {
             setIsLogin(true);
           } else {
             setIsLogin(false);

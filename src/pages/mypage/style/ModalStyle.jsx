@@ -28,13 +28,14 @@ export const ModalBox = styled.div`
 
 export const Modalname = styled.div`
   width: 100%;
-  height: 60px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: fit-content;
+  padding: 24px 0 24px 0;
 
   color: var(--grey-normal);
+`;
+
+export const ModalnameBlank = styled.div`
+  height: 8px;
 `;
 
 export const Option = styled.div`

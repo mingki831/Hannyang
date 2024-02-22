@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { PageContext } from '../../components/context/PageContext';
 
@@ -10,6 +11,8 @@ import SVG from '../../components/imgs/SVG';
 
 export default function Mypage() {
 
+    const nickname = useSelector((state) => state.user.nickname);
+    const point = useSelector((state) => state.user.point);
     const { setPage } = useContext(PageContext);
     const navigate = useNavigate();
 
@@ -24,7 +27,7 @@ export default function Mypage() {
         <MypageST.ProfileZone>
             <MypageST.ProfilePic/>
             <MypageST.PicRight>
-                <MypageST.NickText>정은</MypageST.NickText>
+                <MypageST.NickText>{nickname}</MypageST.NickText>
                 <MypageST.EditBtn onClick={()=>navigate('/mypageEdit')}>
                   내 프로필 <SVG name='Goto' size='8' color='var(--blue-normal)'/>
                 </MypageST.EditBtn>
@@ -38,7 +41,7 @@ export default function Mypage() {
                 </MypageST.DetailBtn>
                 <MypageST.DetailBtn onClick={()=>navigate('/mypoint')}>
                   포인트 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
-                  <MypageST.NumberText>13,200</MypageST.NumberText>
+                  <MypageST.NumberText>{point}</MypageST.NumberText>
                 </MypageST.DetailBtn>
                 <MypageST.DetailBtn>
                   쿠폰 <SVG name='Goto' size='10' color='var(--grey-normal)'/>
