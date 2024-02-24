@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import * as MainST from './MainPageStyle';
 import Layout from '../../components/layout/Layout';
 
-import { getCookieToken } from '../../shared/storage/Cookie';
 import { PageContext } from '../../components/context/PageContext';
 
 import Character from '../../components/imgs/home/character.png'

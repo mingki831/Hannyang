@@ -62,12 +62,12 @@ export const StartBtn = styled.div`
 `;
 
 export const ProgressBar = styled.img`
-  width: 220px;
+  width: 200px;
   display: flex;
   margin: auto;
   align-items: center;
-  margin-top: 40px;
-  margin-bottom: 50px;
+  margin-top: 8px;
+  margin-bottom: 30px;
 `;
 
 export const FormIcon = styled.img`
@@ -75,8 +75,8 @@ export const FormIcon = styled.img`
   display: flex;
   margin: auto;
   align-items: center;
-  margin-top: 60px;
-  margin-bottom: 20px;
+  margin-top: 25%;
+  margin-bottom: 8%;
 `;
 
 export const CheckText = styled.div`
@@ -98,6 +98,16 @@ export const ButtonZone = styled.div`
 
   display: flex;
   justify-content: space-between;
+`;
+
+export const RelaButtonZone = styled.div`
+  position: relative;
+  width: 100%;
+  bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  visibility: ${(props) => (props.focused === 'nextStep' ? 'visible' : 'hidden')};
 `;
 
 export const CancelBtn = styled.div`
@@ -126,4 +136,134 @@ export const NextBtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const DateInput = styled.input`
+  width: 150px;
+  height: 52px;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: var(--font-small);
+  font-weight: var(--weight-regular);
+  color: var(--grey-dark);
+
+  border-radius: 12px;
+  background-color: var(--grey-blur-light);
+`;
+
+export const LooksLikeInput = styled.div`
+  width: 90px;
+  height: 52px;
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--grey-dark);
+
+  border-radius: 12px;
+  background-color: var(--grey-blur-light);
+`;
+
+export const DropDown = styled.div`
+  width: 90px;
+`;
+
+export const Ul = styled.div`
+  position: absolute;
+  width: 90px;
+  height: 130px;
+
+  overflow: scroll;
+  margin-top: 4px;
+
+  background-color: var(--grey-blur-light);
+  color: var(--grey-normal);
+  font-weight: var(--weight-regular);
+  font-size: var(--font-small);
+  border-radius: 12px;
+
+  cursor: pointer;
+`;
+
+export const Li = styled.div`
+  height: 48px;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+`;
+
+export const OptionName = styled.div`
+  color: var(--blue-normal);
+  font-size: 18px;
+  font-weight: var(--weight-bold);
+
+  margin-bottom: 12px;
+`;
+
+export const FormBox = styled.div`
+  width: 95%;
+  height: fit-content;
+  margin: auto;
+  padding: 24px 18px;
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--blue-normal);
+  font-weight: var(--weight-semi-bold);
+
+  border-radius: 12px;
+  box-shadow: 0px 0px 8px 0px rgba(187, 187, 187, 0.50);
+`;
+
+export const FormTitle = styled.div`
+  color: var(--blue-normal);
+  font-weight: var(--weight-semi-bold);
+`;
+
+export const FormDetail = styled.div`
+  margin-top: 4px;
+  font-weight: var(--weight-regular);
+  font-size: var(--font-micro);
+`;
+
+export const FormDetailRed = styled.div`
+  margin-top: 4px;
+  font-weight: var(--weight-regular);
+  font-size: var(--font-micro);
+  color: var(--red-caution);
+`;
+
+export const CalculationBtn = styled.div`
+  width: 95%;
+  height: fit-content;
+  padding: 20px;
+  margin: auto;
+  margin-top: 24px;
+  margin-bottom: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 12px;
+  background-color: var(--blue-blur-light);
+  color: var(--blue-normal);
+`;
+
+export const PriceText = styled.div`
+  visibility: ${(props) => (props.focused === 'Resulted' ? 'visible' : 'hidden')};
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
 `;

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-//import { useSelector } from 'react-redux';
 
 import * as ResrchST from './ResrchStyle';
 import * as SignST from '../signup/SignUpStyle';
@@ -10,10 +9,11 @@ import Layout from '../../components/layout/Layout';
 import Progress1 from '../../components/imgs/researcher/Progress1.png';
 import FormIcon from '../../components/imgs/researcher/FormIcon.png';
 import CancelModal from './CancelModal';
+import BlankModal from './BlankModal';
 
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
-import { __postStep1 } from '../../redux/modules/SurveySlice';
+import { SET_SURVEY, __postStep1 } from '../../redux/modules/SurveySlice';
 
 export default function Step1() {
 
@@ -22,38 +22,28 @@ export default function Step1() {
 
     const { setPage } = useContext(PageContext);
     const [isModal, setIsModal] = useState(false);
+    const [isBlank, setIsBlank] = useState(false);
     const [ {formUrl}, onInputChange ] = useInput({formUrl: ""});
-    //const SentUrl = useSelector
 
     const nextHandler = async() => {
         let Url = formUrl.replace(/ /g,"");
         if (Url === "") {
-            //빈칸이라는 경고창 팝업
+            setIsBlank(true);
         } else {
-            
-            dispatch(__postStep1(Url));
-            navigate('/step2');
+            __postStep1(Url)
+            .then(res => {
+                if (parseInt(Number(res.status) / 100) === 2) {
+                    console.log(res.data);
+                    dispatch(SET_SURVEY(res.data));
+                    navigate('/step2');
+                } else {
+                    //예외처리
+                }
+            }).catch((error) => {
+                //예외처리
+            })
         }
     }
-    
-    //로그인 핸들러
-    // const LoginHandler = async () => {
-    //     login({email: email, password: pw})
-    //     .then(response => {
-    //         if (parseInt(Number(response.status) / 100) === 2) {
-    //             setRefreshToken(response.headers['authorization']);
-    //             dispatch(SET_TOKEN(response.headers['refresh_token']));
-    //             navigate('/');
-    //         } else {
-    //             setIsCantLogin(true);
-    //             resetInput();
-    //         }
-    //     }).catch((error) => {
-    //         setIsCantLogin(true);
-    //         resetInput();
-    //     });
-    // }
-
 
     useEffect(() => {
         setPage('step1');
@@ -65,6 +55,9 @@ export default function Step1() {
         {/* 모달 */}
         {isModal === true ?
         <CancelModal setIsModal={setIsModal}/> : <></>}
+        {/* 빈칸경고모달 */}
+        {isBlank === true ?
+        <BlankModal setIsBlank={setIsBlank}/> : <></>}
             <SignST.ContentZone>
                 <ResrchST.ProgressBar src={Progress1}/>
                 <SignST.SignupGuide>
