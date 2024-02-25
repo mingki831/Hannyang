@@ -15,7 +15,8 @@ export default function Layout(props) {
             <LayoutST.Header>
                 {/* 뒤로가기 */}
                 { (page === 'MainPage') ||
-                  (page === 'SignUpSuccess') ? (
+                  (page === 'SignUpSuccess') ||
+                  (page === 'stepComplete') ? (
                     <></>
                 ) : (
                 <LayoutST.BackBtn onClick={() => {navigate(-1)}}>

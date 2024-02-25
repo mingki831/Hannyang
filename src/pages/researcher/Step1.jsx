@@ -23,7 +23,7 @@ export default function Step1() {
     const { setPage } = useContext(PageContext);
     const [isModal, setIsModal] = useState(false);
     const [isBlank, setIsBlank] = useState(false);
-    const [ {formUrl}, onInputChange ] = useInput({formUrl: ""});
+    const [ {formUrl}, onInputChange, resetInput ] = useInput({formUrl: ""});
 
     const nextHandler = async() => {
         let Url = formUrl.replace(/ /g,"");
@@ -38,9 +38,11 @@ export default function Step1() {
                     navigate('/step2');
                 } else {
                     //예외처리
+                    resetInput();
                 }
             }).catch((error) => {
                 //예외처리
+                resetInput();
             })
         }
     }

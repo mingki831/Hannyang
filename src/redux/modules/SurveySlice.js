@@ -36,6 +36,22 @@ export const __postStep2 = async (arg) => {
     return res;
 }
 
+export const __postStep3 = async (arg) => {
+  console.log(arg);
+  console.log(JSON.stringify({
+    "accountHolderName": arg.accountOwner,
+    "account": arg.account,
+  }))
+  const res =
+    await getInstance().put(
+        `/survey-requests/step3/${arg.surveyId}`,
+        JSON.stringify({
+            "accountHolderName": arg.accountOwner,
+            "account": arg.account,
+          }));
+  return res;
+}
+
   const initialState = {
     //step: { data: {}, loading: false, error: null, fulfilled: false },
     id: null,

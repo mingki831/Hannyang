@@ -10,6 +10,7 @@ import Layout from '../../components/layout/Layout';
 import Progress2 from '../../components/imgs/researcher/Progress2.png';
 import CancelModal from './CancelModal';
 import SVG from '../../components/imgs/SVG';
+import BlankModal from './BlankModal';
 
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
@@ -23,8 +24,7 @@ export default function Step2() {
     const dispatch = useDispatch();
 
     const [isModal, setIsModal] = useState(false);
-    const [isResult, setIsResult] = useState(false);
-    const [nextStep, setNextStep] = useState(false);
+    const [isBlank, setIsBlank] = useState(false);
     const [pemOpen, setPemOpen] = useState(false);
     const [pomOpen, setPomOpen] = useState(false);
 
@@ -63,19 +63,24 @@ export default function Step2() {
     }
 
     const nextHandler = async() => {
-        __postStep2({surveyId, people, point, startDate, endDate, finalPrice})
-        .then(res => {
-            if (parseInt(Number(res.status) / 100) === 2) {
-                dispatch(SET_SURVEY(res.data));
-                navigate('/step2');
-            } else {
+        if ( (startDate === "") || (endDate === "") ) {
+            setIsBlank(true);
+        } else {
+            __postStep2({surveyId, people, point, startDate, endDate, finalPrice})
+            .then(res => {
+                if (parseInt(Number(res.status) / 100) === 2) {
+                    dispatch(SET_SURVEY(res.data));
+                    navigate('/step3');
+                } else {
+                    //예외처리
+                    resetInput();
+                }
+            }).catch((error) => {
                 //예외처리
-            }
-        }).catch((error) => {
-            //예외처리
-        })
-        console.log("성공적으로 put");
-        //navigate('/step3');
+                resetInput();
+            })
+            console.log("성공적으로 put");
+        }
     }
 
     useEffect(() => {
@@ -84,8 +89,7 @@ export default function Step2() {
 
     useEffect(() => {
         if ( (startDate === "") || (endDate === "") ) {
-            setIsResult(false);
-            setNextStep(false);
+            setFinalPrice(0);
         } else {
             //맨 아래로 스크롤
             scrollToBottom(); 
@@ -126,12 +130,9 @@ export default function Step2() {
 
             //최종 금액 오류 방지
             if (isNaN(price)) {
-                setIsResult(false);
-                setNextStep(false);
+                setFinalPrice(0);
             } else {
                 setFinalPrice(price);
-                setIsResult(true);
-                setNextStep(true);
             }
         }
     }, [people, point, startDate, endDate])
@@ -142,6 +143,9 @@ export default function Step2() {
         {/* 모달 */}
         {isModal === true ?
         <CancelModal setIsModal={setIsModal}/> : <></>}
+        {/* 빈칸경고모달 */}
+        {isBlank === true ?
+        <BlankModal setIsBlank={setIsBlank}/> : <></>}
             <SignST.ContentZone>
                 <ResrchST.ProgressBar src={Progress2}/>
                 <SignST.SignupGuide>
@@ -227,7 +231,7 @@ export default function Step2() {
                         설문 시작 날짜
                         <ResrchST.FormDetailRed>
                             검수 후 업로드까지 <br/>
-                            최소 24시간이 소요됩니다.
+                            최소 12시간이 소요됩니다.
                         </ResrchST.FormDetailRed>
                     </ResrchST.FormTitle>
                     <ResrchST.DateInput
@@ -261,12 +265,17 @@ export default function Step2() {
                             금액을 조정해보세요 !
                         </ResrchST.FormDetail>
                     </ResrchST.FormTitle>
-                    <ResrchST.PriceText focused={isResult === true ? 'Resulted' : 'unResulted'}>
-                        {finalPrice} 원
-                    </ResrchST.PriceText>
+                    {finalPrice === (0 || NaN) ?
+                        <ResrchST.PriceText>
+                            원
+                        </ResrchST.PriceText> :
+                        <ResrchST.PriceText>
+                            {finalPrice} 원
+                        </ResrchST.PriceText>
+                    }
                 </ResrchST.CalculationBtn>
 
-                <ResrchST.RelaButtonZone focused={nextStep === true ? 'nextStep' : ''}>
+                <ResrchST.RelaButtonZone>
                     <ResrchST.CancelBtn onClick={()=>{setIsModal(true)}}>
                         취소하기
                     </ResrchST.CancelBtn>

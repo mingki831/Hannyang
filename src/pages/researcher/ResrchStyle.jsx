@@ -107,7 +107,6 @@ export const RelaButtonZone = styled.div`
 
   display: flex;
   justify-content: space-between;
-  visibility: ${(props) => (props.focused === 'nextStep' ? 'visible' : 'hidden')};
 `;
 
 export const CancelBtn = styled.div`
@@ -263,7 +262,70 @@ export const CalculationBtn = styled.div`
 `;
 
 export const PriceText = styled.div`
-  visibility: ${(props) => (props.focused === 'Resulted' ? 'visible' : 'hidden')};
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
+  white-space: nowrap;
+`;
+
+export const FlexBox = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const FinalPrice = styled.div`
+  width: fit-content;
+  height: 88px;
+  padding: 16px;
+
+  text-align: center;
+
+  border-radius: 12px;
+  background-color: var(--blue-blur-light);
+  color: var(--blue-normal);
+`;
+
+export const AccountZone = styled.div`
+  width: 60%;
+  height: 88px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 12px;
+  background-color: var(--blue-light);
+  color: var(--blue-normal);
+`;
+
+export const AccountText = styled.div`
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-small);
+  text-align: center;
+  white-space: nowrap;
+`;
+
+export const CopyIcon = styled.img`
+  position: relative;
+  width: 70px;
+  object-fit: contain;
+`;
+
+export const AccountFormBox = styled.div`
+  width: 96%;
+  height: fit-content;
+  margin: auto;
+  padding: 28px;
+  margin-top: 28px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--blue-normal);
+  font-weight: var(--weight-semi-bold);
+
+  border-radius: 12px;
+  box-shadow: 0px 0px 8px 0px rgba(187, 187, 187, 0.50);
 `;
