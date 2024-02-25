@@ -20,6 +20,9 @@ export default function MainPage() {
     const { setPage } = useContext(PageContext);
     const navigate = useNavigate();
 
+    const giftArray = ['공차', '스벅', '베라', '치킨'];
+    const randomValue = giftArray[Math.floor(Math.random() * giftArray.length)];
+
     useEffect(() => {
         setPage('MainPage');
         if (authenticated === true) {
@@ -37,8 +40,8 @@ export default function MainPage() {
                     {isLogin === false ?
                     <MainST.GuideZone>
                         <MainST.GuideText>
-                            설문조사 빠르게 끝내고 <br/>
-                            기프티콘 받자!
+                            설문조사 참여하고 <br/>
+                            {randomValue} 먹자!
                         </MainST.GuideText>
                         <MainST.GuideButton
                             onClick={() => {
