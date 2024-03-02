@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-//import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import * as ResrchST from './ResrchStyle';
 import * as SignST from '../signup/SignUpStyle';
@@ -14,7 +14,7 @@ import BlankModal from './BlankModal';
 
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
-import { __postStep2, SET_SURVEY } from '../../redux/modules/SurveySlice';
+import { __postStep3, SET_SURVEY } from '../../redux/modules/SurveySlice';
 
 export default function Step3() {
 
@@ -25,9 +25,7 @@ export default function Step3() {
     const [isModal, setIsModal] = useState(false);
     const [isBlank, setIsBlank] = useState(false);
 
-    //금액 불러오기
-    //const price = useSelector((state) => state.survey.price);
-    //const surveyId = useSelector((state) => state.survey.id);
+    const surveyId = useSelector((state) => state.survey.id);
 
     const [ { accountOwner, account },
             onInputChange,
@@ -42,7 +40,7 @@ export default function Step3() {
             setIsBlank(true);
         } else {
             //surveyId 추가
-            __postStep2({ accountOwner, account })
+            __postStep3({ surveyId, accountOwner, account })
             .then(res => {
                 if (parseInt(Number(res.status) / 100) === 2) {
                     dispatch(SET_SURVEY(res.data));
@@ -55,7 +53,6 @@ export default function Step3() {
                 //예외처리
                 resetInput();
             })
-            console.log("성공적으로 put");
         }
     }
 

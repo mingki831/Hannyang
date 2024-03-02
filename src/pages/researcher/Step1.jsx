@@ -33,7 +33,6 @@ export default function Step1() {
             __postStep1(Url)
             .then(res => {
                 if (parseInt(Number(res.status) / 100) === 2) {
-                    console.log(res.data);
                     dispatch(SET_SURVEY(res.data));
                     navigate('/step2');
                 } else {

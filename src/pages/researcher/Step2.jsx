@@ -41,6 +41,7 @@ export default function Step2() {
                 endDate: "",
             });
 
+    //인원 드롭다운
     const PemHandler = () => {
         if(pemOpen === false) {
             setPemOpen(true);
@@ -49,6 +50,7 @@ export default function Step2() {
         } 
     }
 
+    //포인트 드롭다운
     const PomHandler = () => {
         if(pomOpen === false) {
             setPomOpen(true);
@@ -79,7 +81,6 @@ export default function Step2() {
                 //예외처리
                 resetInput();
             })
-            console.log("성공적으로 put");
         }
     }
 

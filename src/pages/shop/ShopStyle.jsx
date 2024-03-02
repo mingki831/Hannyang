@@ -22,6 +22,7 @@ export const CateItem = styled.div`
 export const GifticonZone = styled.div`
   width: 100%;
   height: fit-content;
+  margin-top: 8px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -31,18 +32,19 @@ export const GifticonBox = styled.div`
   width: 48%;
   height: fit-content;
   margin: 8px 0 8px 0;
-  padding: 14px;
+  padding: 16px;
 
   border-radius: 12px;
   box-shadow: 0px 0px 8px 0px rgba(187, 187, 187, 0.50);
 `;
 
 export const GifticonImg = styled.div`
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  width: 110px;
+  height: 110px;
+  border-radius: 60px;
   margin: auto;
-  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 16px;
 
   background-color: lightblue;
 `;

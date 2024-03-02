@@ -15,14 +15,6 @@ export const __postStep1 = async (Url) => {
 }
 
 export const __postStep2 = async (arg) => {
-    console.log(arg);
-    console.log(JSON.stringify({
-      "participantCount": arg.people,
-      "rewardPoints": arg.point,
-      "deadline": arg.endDate,
-      //시작일 추가
-      //결제금액 추가
-    }))
     const res =
       await getInstance().put(
           `/survey-requests/step2/${arg.surveyId}`,
@@ -30,18 +22,13 @@ export const __postStep2 = async (arg) => {
               "participantCount": arg.people,
               "rewardPoints": arg.point,
               "deadline": arg.endDate,
-              //시작일 추가
-              //결제금액 추가
+              "createdAt": arg.startDate,
+              "price": arg.finalPrice,
             }));
     return res;
 }
 
 export const __postStep3 = async (arg) => {
-  console.log(arg);
-  console.log(JSON.stringify({
-    "accountHolderName": arg.accountOwner,
-    "account": arg.account,
-  }))
   const res =
     await getInstance().put(
         `/survey-requests/step3/${arg.surveyId}`,
@@ -61,6 +48,8 @@ export const __postStep3 = async (arg) => {
     deadline: null,
     accountHolderName: null,
     account: null,
+    createdAt: null,
+    price: null,
   };
 
   export const surveySlice = createSlice({
@@ -75,6 +64,8 @@ export const __postStep3 = async (arg) => {
         state.deadline = action.payload.deadline;
         state.accountHolderName = action.payload.accountHolderName;
         state.account = action.payload.account;
+        state.createdAt = action.payload.createdAt;
+        state.price = action.payload.price;
       },
     //   CLEAR_STEP: (state) => {
     //     state.step = {
