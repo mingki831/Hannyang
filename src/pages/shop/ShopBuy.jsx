@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as ModalST from '../mypage/style/ModalStyle';
+import * as ModalST from '../../components/modal/ModalStyle';
 import * as ShopST from './ShopStyle';
 
 import SVG from '../../components/imgs/SVG';

@@ -1,4 +1,4 @@
-import * as ModalST from '../mypage/style/ModalStyle'
+import * as ModalST from '../../components/modal/ModalStyle'
 import SVG from '../../components/imgs/SVG'
 import { useNavigate } from 'react-router-dom'
 

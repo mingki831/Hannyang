@@ -9,7 +9,7 @@ import Layout from '../../components/layout/Layout';
 import Progress1 from '../../components/imgs/researcher/Progress1.png';
 import FormIcon from '../../components/imgs/researcher/FormIcon.png';
 import CancelModal from './CancelModal';
-import BlankModal from './BlankModal';
+import BlankModal from '../../components/modal/BlankModal';
 
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
@@ -23,11 +23,13 @@ export default function Step1() {
     const { setPage } = useContext(PageContext);
     const [isModal, setIsModal] = useState(false);
     const [isBlank, setIsBlank] = useState(false);
+    const [modalMsg, setModalMsg] = useState('입력사항을 확인해주세요.');
     const [ {formUrl}, onInputChange, resetInput ] = useInput({formUrl: ""});
 
     const nextHandler = async() => {
         let Url = formUrl.replace(/ /g,"");
         if (Url === "") {
+            setModalMsg('입력사항을 확인해주세요.');
             setIsBlank(true);
         } else {
             __postStep1(Url)
@@ -58,7 +60,7 @@ export default function Step1() {
         <CancelModal setIsModal={setIsModal}/> : <></>}
         {/* 빈칸경고모달 */}
         {isBlank === true ?
-        <BlankModal setIsBlank={setIsBlank}/> : <></>}
+        <BlankModal setIsBlank={setIsBlank} modalMsg={modalMsg}/> : <></>}
             <SignST.ContentZone>
                 <ResrchST.ProgressBar src={Progress1}/>
                 <SignST.SignupGuide>

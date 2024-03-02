@@ -1,7 +1,7 @@
-import * as ModalST from '../mypage/style/ModalStyle'
-import SVG from '../../components/imgs/SVG'
+import * as ModalST from './ModalStyle'
+import SVG from '../imgs/SVG'
 
-export default function MypageSetting({setIsBlank}) {
+export default function MypageSetting({setIsBlank, modalMsg}) {
 
     return (
         <ModalST.Overlay>
@@ -9,7 +9,7 @@ export default function MypageSetting({setIsBlank}) {
                 <ModalST.Modalname>
                     <SVG name='Caution' size='18' color='var(--red-caution)'/>
                     <ModalST.ModalnameBlank/>
-                    입력사항을 확인해주세요.
+                    {modalMsg}
                 </ModalST.Modalname>
                 <ModalST.Option onClick={()=>{setIsBlank(false)}}>확인</ModalST.Option>
             </ModalST.ModalBox>

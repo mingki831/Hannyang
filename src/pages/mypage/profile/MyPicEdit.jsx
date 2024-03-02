@@ -1,4 +1,4 @@
-import * as ModalST from '../style/ModalStyle';
+import * as ModalST from '../../../components/modal/ModalStyle';
 
 export default function MypageSetting({closePicModal}) {
 

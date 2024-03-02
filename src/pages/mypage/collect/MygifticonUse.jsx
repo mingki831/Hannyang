@@ -1,4 +1,4 @@
-import * as ModalST from '../style/ModalStyle';
+import * as ModalST from '../../../components/modal/ModalStyle';
 import * as ShopST from '../../shop/ShopStyle';
 import * as MyInfoST from '../style/MyInfoStyle';
 

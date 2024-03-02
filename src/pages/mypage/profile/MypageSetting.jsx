@@ -1,9 +1,9 @@
-import * as ModalST from '../style/ModalStyle';
+import * as ModalST from '../../../components/modal/ModalStyle';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { logout, withdraw } from '../../../shared/api/AuthAPI';
 import { removeCookieToken } from '../../../shared/storage/Cookie';
-import { useDispatch } from 'react-redux';
 import { DELETE_TOKEN } from '../../../redux/modules/AuthSlice';
 import { DELETE_USER } from '../../../redux/modules/UserSlice';
 

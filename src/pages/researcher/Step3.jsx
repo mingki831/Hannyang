@@ -10,7 +10,7 @@ import Layout from '../../components/layout/Layout';
 import Progress3 from '../../components/imgs/researcher/Progress3.png';
 import copyIcon from '../../components/imgs/researcher/copyIcon.png';
 import CancelModal from './CancelModal';
-import BlankModal from './BlankModal';
+import BlankModal from '../../components/modal/BlankModal';
 
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
@@ -24,6 +24,7 @@ export default function Step3() {
 
     const [isModal, setIsModal] = useState(false);
     const [isBlank, setIsBlank] = useState(false);
+    const [modalMsg, setModalMsg] = useState('입력사항을 확인해주세요.');
 
     const surveyId = useSelector((state) => state.survey.id);
 
@@ -37,6 +38,7 @@ export default function Step3() {
 
     const nextHandler = async() => {
         if (accountOwner === "") {
+            setModalMsg('입력사항을 확인해주세요.');
             setIsBlank(true);
         } else {
             //surveyId 추가
@@ -68,7 +70,7 @@ export default function Step3() {
         <CancelModal setIsModal={setIsModal}/> : <></>}
         {/* 빈칸경고모달 */}
         {isBlank === true ?
-        <BlankModal setIsBlank={setIsBlank}/> : <></>}
+        <BlankModal setIsBlank={setIsBlank} modalMsg={modalMsg}/> : <></>}
             <SignST.ContentZone>
                 <ResrchST.ProgressBar src={Progress3}/>
                 <SignST.SignupGuide>
