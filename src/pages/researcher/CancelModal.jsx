@@ -2,7 +2,7 @@ import * as ModalST from '../../components/modal/ModalStyle'
 import SVG from '../../components/imgs/SVG'
 import { useNavigate } from 'react-router-dom'
 
-export default function MypageSetting({setIsModal}) {
+export default function CancelModal({setIsModal}) {
 
     const navigate = useNavigate();
 

@@ -138,8 +138,8 @@ export const NextBtn = styled.div`
 `;
 
 export const DateInput = styled.input`
-  width: 150px;
-  height: 52px;
+  width: 160px;
+  height: 32px;
   padding: 8px;
 
   display: flex;

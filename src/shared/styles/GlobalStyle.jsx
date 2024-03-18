@@ -5,8 +5,6 @@ const GlobalStyle = createGlobalStyle`
   :root {
     /* Color */
     --black-default: #000000;
-    --grey-dark: #585858;
-    --grey-normal: #898C8E;
     --grey-light: #DCDCDC;
     --grey-blur-light: #F6F6F6;
     --white-default: #ffffff;
@@ -18,6 +16,21 @@ const GlobalStyle = createGlobalStyle`
     --yellow-money: #FFCB41;
     --red-caution: #FF6651;
     --green-success: #51D486;
+
+    --main-green: #00FD89;
+    --main-pink: #FF75E9;
+
+    --main-black: #17171B;
+    --main-white: #E0E0E0;
+    --grey-dark: #585858;
+    --grey-normal: #898C8E;
+
+    --level-one: #2A2A3A;
+    --level-one-ol: #303043;
+    --level-two: #3D3D4E;
+    --level-two-ol: #444457;
+    --level-three: #49495E;
+    --level-three-ol: #4E4E63;
 
     /* Font size */
     --font-huge: 32px;

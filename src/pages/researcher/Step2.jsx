@@ -10,7 +10,7 @@ import Layout from '../../components/layout/Layout';
 import Progress2 from '../../components/imgs/researcher/Progress2.png';
 import CancelModal from './CancelModal';
 import SVG from '../../components/imgs/SVG';
-import BlankModal from '../../components/modal/BlankModal';
+import CautionModal from '../../components/modal/CautionModal';
 
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
@@ -148,7 +148,7 @@ export default function Step2() {
         <CancelModal setIsModal={setIsModal}/> : <></>}
         {/* 빈칸경고모달 */}
         {isBlank === true ?
-        <BlankModal setIsBlank={setIsBlank} modalMsg={modalMsg}/> : <></>}
+        <CautionModal setIsBlank={setIsBlank} modalMsg={modalMsg}/> : <></>}
             <SignST.ContentZone>
                 <ResrchST.ProgressBar src={Progress2}/>
                 <SignST.SignupGuide>

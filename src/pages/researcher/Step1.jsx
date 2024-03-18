@@ -9,7 +9,7 @@ import Layout from '../../components/layout/Layout';
 import Progress1 from '../../components/imgs/researcher/Progress1.png';
 import FormIcon from '../../components/imgs/researcher/FormIcon.png';
 import CancelModal from './CancelModal';
-import BlankModal from '../../components/modal/BlankModal';
+import CautionModal from '../../components/modal/CautionModal';
 
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
@@ -60,7 +60,7 @@ export default function Step1() {
         <CancelModal setIsModal={setIsModal}/> : <></>}
         {/* 빈칸경고모달 */}
         {isBlank === true ?
-        <BlankModal setIsBlank={setIsBlank} modalMsg={modalMsg}/> : <></>}
+        <CautionModal setIsBlank={setIsBlank} modalMsg={modalMsg}/> : <></>}
             <SignST.ContentZone>
                 <ResrchST.ProgressBar src={Progress1}/>
                 <SignST.SignupGuide>

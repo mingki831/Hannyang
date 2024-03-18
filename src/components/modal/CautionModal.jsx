@@ -1,7 +1,7 @@
 import * as ModalST from './ModalStyle'
 import SVG from '../imgs/SVG'
 
-export default function MypageSetting({setIsBlank, modalMsg}) {
+export default function CautionModal({setIsBlank, modalMsg}) {
 
     return (
         <ModalST.Overlay>
