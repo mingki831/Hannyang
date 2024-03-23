@@ -6,7 +6,6 @@ import * as MyInfoST from '../style/MyInfoStyle';
 import * as SignST from '../../signup/SignUpStyle';
 import * as MainST from '../../main/MainPageStyle'
 import Layout from '../../../components/layout/Layout';
-import Logo2 from '../../../components/imgs/Logo2.png'
 
 export default function Mypoint() {
 
@@ -29,7 +28,6 @@ export default function Mypoint() {
             </MyInfoST.MainText>
             <MainST.PointText>
                 13,500
-            <MainST.Logo2 src={Logo2}/>
             </MainST.PointText>
         </MyInfoST.MainZone>
         <MyInfoST.HistoryZone>

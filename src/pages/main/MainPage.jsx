@@ -4,11 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import * as MainST from './MainPageStyle';
 import Layout from '../../components/layout/Layout';
+import SVG from '../../components/imgs/SVG';
 
 import { PageContext } from '../../components/context/PageContext';
-
-import Character from '../../components/imgs/home/character.png'
-import Logo2 from '../../components/imgs/Logo2.png'
 
 export default function MainPage() {
 
@@ -20,7 +18,7 @@ export default function MainPage() {
     const { setPage } = useContext(PageContext);
     const navigate = useNavigate();
 
-    const giftArray = ['공차', '스벅', '베라', '치킨'];
+    const giftArray = ['공차', '커피', '베라', '치킨'];
     const randomValue = giftArray[Math.floor(Math.random() * giftArray.length)];
 
     useEffect(() => {
@@ -35,13 +33,14 @@ export default function MainPage() {
     return (
         <>
         <Layout>
-            <MainST.MainBg>
                 <MainST.ContentZone>
                     {isLogin === false ?
                     <MainST.GuideZone>
                         <MainST.GuideText>
-                            설문조사 참여하고 <br/>
-                            {randomValue} 먹자!
+                            설문조사 참여하고
+                        </MainST.GuideText>
+                        <MainST.GuideText>
+                            <MainST.NickText>{randomValue}&nbsp;</MainST.NickText> 먹자!
                         </MainST.GuideText>
                         <MainST.GuideButton
                             onClick={() => {
@@ -64,23 +63,35 @@ export default function MainPage() {
                         </MainST.NumberZone>
                         <MainST.PointText>
                             {point}
-                            <MainST.Logo2 src={Logo2}/>
                         </MainST.PointText>
                     </MainST.GuideZone>
                     }
-                <MainST.CharacterZone>
-                    <MainST.Character src={Character}/>
-                </MainST.CharacterZone>
                 
                 <MainST.OptionBox>
-                    <MainST.Option1 onClick={()=>{navigate('/researcher')}}>설문 조사 <br/> 올리기</MainST.Option1>
-                    <MainST.Option2>설문 조사 <br/> 참여하기</MainST.Option2>
+                    <MainST.Option onClick={()=>{navigate('/researcher')}}>
+                        설문등록
+                        <MainST.OptionText>
+                            설문조사<br/><MainST.HighLight>등록</MainST.HighLight>하기
+                        </MainST.OptionText>
+                    </MainST.Option>
+                    <MainST.Option>
+                        설문참여
+                        <MainST.OptionText>
+                            설문조사<br/><MainST.HighLight>참여</MainST.HighLight>하기
+                        </MainST.OptionText>
+                    </MainST.Option>
                 </MainST.OptionBox>
 
+                <MainST.BubbleZone>
+                    <MainST.BubbleIcon/>
+                    <MainST.BubbleText>
+                        <MainST.SmallText>반가워요 !</MainST.SmallText>
+                        폼잇은 처음이신가요 ?
+                    </MainST.BubbleText>
+                    <SVG name='Goto' size='12' color='var(--main-white)'/>
+                </MainST.BubbleZone>
+                <MainST.BubblePoint/>
                 </MainST.ContentZone>
-
-            </MainST.MainBg>
-
         </Layout>
         </>
     );

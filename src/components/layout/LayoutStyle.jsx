@@ -1,18 +1,7 @@
 import styled from 'styled-components';
 
-export const BgImage = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background-image: ${(props) => `url(${props.path})`};
-  background-size: 100vw 100vh;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-`;
-
 export const Content = styled.div`
-  background-color: var(--white-default);
+  background-color: var(--main-black);
   position: relative;
   display: flex;
   flex-flow: column nowrap;

@@ -85,6 +85,7 @@ const GlobalStyle = createGlobalStyle`
 
   input::placeholder {
     color: var(--grey-normal);
+    font-weight: var(--weight-semi-bold);
   }
 
   ul {

@@ -1,23 +1,4 @@
 import styled from 'styled-components';
-import Ellipse from '../../components/imgs/home/ellipse.png'
-
-export const MainBg = styled.div`
-  position: absolute;
-
-  background-image: url(${Ellipse});
-  background-position: center;
-  background-size: 1500px 100%;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100%;
-  min-height: 667px;
-  top: 0;
-  overflow: hidden;
-  object-fit: contain;
-
-  display: flex;
-  justify-content: center;
-`;
 
 export const ContentZone = styled.div`
   position: relative;
@@ -27,19 +8,8 @@ export const ContentZone = styled.div`
   top: 100px;
 `;
 
-export const CharacterZone = styled.div`
-  position: relative;
-  display: flex;
-  width: 100%;
-  min-width: 375px;
-  height: 50%;
-  min-height: 250px;
-  margin: auto;
-  justify-content: end;
-`;
-
 export const GuideZone = styled.div`
-  position: absolute;
+  position: relative;
   left: 10%;
   margin-top: 100px;
 
@@ -51,16 +21,16 @@ export const GuideText = styled.div`
   position: relative;
   display: flex;
   align-items: flex-end;
-  line-height: 30px;
+  margin-bottom: 4px;
 
-  font-size: var(--font-medium);
-  font-weight: var(--weight-regular);
+  font-size: var(--font-large);
+  font-weight: var(--weight-thin);
 `;
 
 export const NickText = styled.div`
   font-size: 30px;
   font-weight: var(--weight-semi-bold);
-  margin-bottom: 3px;
+  color: var(--main-green);
 `;
 
 export const NumberZone = styled.div`
@@ -80,92 +50,115 @@ export const NumberText = styled.div`
 export const PointText = styled.div`
   font-size: 28px;
   font-weight: var(--weight-semi-bold);
-  color: var(--yellow-money);
+  color: var(--main-green);
 
   display: flex;
   align-items: center;
 `;
 
-export const Logo2 = styled.img`
-  width: 25px;
-  height: 25px;
-  margin-left: 8px;
-`;
-
 export const GuideButton = styled.div`
   position: relative;
 
-  width: 163px;
-  height: 33px;
-  margin-top: 16px;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 28px;
 
-  border-radius: 16px;
-  background: var(--blue-light);
+  border-radius: 6px;
+  background: var(--main-green);
 
-  color: var(--blue-normal);
-  font-size: var(--font-regular);
+  color: var(--main-black);
   font-weight: var(--weight-semi-bold);
   text-align: center;
-  padding: 6px;
+  padding: 8px 12px;
 
   cursor: pointer;
 `;
 
-export const Character = styled.img`
-  position: relative;
-  width: fit-content;
-  height: 100%;
-  margin-right: 8px;
-  object-fit: cover;
-`;
-
 export const OptionBox = styled.div`
   position: relative;
-  width: 100%;
-  height: 45%;
-
-  justify-content: center;
-  align-items: center;
+  width: 80%;
   margin: auto;
+
+  display : flex;
+  justify-content: space-between;
 `;
 
-export const Option1 = styled.div`
+export const Option = styled.div`
   position: relative;
-  width: 100%;
-  height: 50%;
-  left: 15%;
-  margin-bottom: 20px;
+  width: 47%;
+  height: 235px;
 
-  border-radius: 20px 0 0 20px;
-  background: var(--blue-blur-light);
-  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.70);
+  margin-top: 64px;
+  margin-bottom: 60px;
+  padding: 20px;
 
-  color: var(--blue-normal);
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
+  border-radius: 8px;
+  background: var(--level-one-ol);
 
-  text-align: center;
-  display : flex;
-  justify-content : center;
-  align-items : center;
+  font-size: var(--font-small);
+  color: var(--grey-normal);
 `;
 
-export const Option2 = styled.div`
-  position: relative;
-  width: 100%;
-  height: 50%;
-  right: 15%;
+export const OptionText = styled.div`
+  margin-top: 12px;
 
-  border-radius: 0 20px 20px 0;
-  background: var(--blue-blur-light);
-  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.70);
-
-  color: var(--blue-normal);
   font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
+  color: var(--main-white);
+  font-weight: var(--weight-regular);
+`;
 
-  text-align: center;
-  display : flex;
-  justify-content : center;
-  align-items : center;
+export const HighLight = styled.div`
+  color: var(--main-green);
+  float: left;
+`;
+
+export const BubbleZone = styled.div`
+  position: relative;
+  width: 80%;
+  height: 84px;
+
+  padding: 20px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 8px;
+  background: var(--level-one-ol);
+
+  color: var(--grey-normal);
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+`;
+
+export const BubbleIcon = styled.div`
+  width: 44px;
+  height: 44px;
+
+  background: var(--main-black);
+`;
+
+export const SmallText = styled.div`
+  color: var(--grey-normal);
+  font-size: var(--font-small);
+  margin-bottom: 4px;
+`;
+
+export const BubbleText = styled.div`
+  position: absolute;
+  left: 80px;
+  color: var(--main-white);
+  font-size: var(--font-regular);
+`;
+
+export const BubblePoint = styled.div`
+  position: relative;
+  width: 0px;
+  height: 0px;
+  left: 280px;
+  bottom: 1px;
+  border-left: 36px solid var(--level-one-ol);
+  border-top: 0px solid transparent;
+  border-bottom: 36px solid transparent;
 `;

@@ -4,7 +4,7 @@ export const MainBg = styled.div`
   position: absolute;
   align-items: center;
 
-  background-color: var(--blue-normal);
+  background-color: var(--main-black);
   width: 100%;
   height: 100%;
 
@@ -23,22 +23,27 @@ export const ContentZone = styled.div`
 export const LogoZone = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-top: 16px;
 
-  color: var(--white-default);
-  font-size: var(--font-huge);
-  font-weight: var(--weight-semi-bold);
+  color: var(--main-white);
+  font-size: var(--font-small);
+  font-weight: var(--weight-regular);
+  word-spacing: 4px;
 `;
 
 export const LogoImage = styled.img`
-  width: 70px;
-  height: 70px;
-  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 100px;
+
+  width: 230px;
+  height: 50px;
 `;
 
 export const InputZone = styled.div`
-  margin-top: 12%;
-  margin-bottom: 12%;
+  margin-top: 56px;
+  margin-bottom: 16px;
 `;
 
 export const InputBox = styled.input`
@@ -49,38 +54,43 @@ export const InputBox = styled.input`
   
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
-  color: var(--grey-dark);
-  padding-left: 16px;
+  color: var(--main-white);
+  padding-left: 24px;
 
   border-radius: 12px;
-  background-color: var(--white-default);
-
-  display: flex;
-  align-items: center;
+  background-color: var(--level-one);
+  border: 2px solid var(--level-one-ol);
 `;
 
 export const CautionText = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  gap: 4px;
 
-  color: var(--red-caution);
+  color: var(--main-pink);
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
 `;
 
+export const NoCaution = styled.div`
+  width: 18px;
+  height: 18px;
+  visibility: hidden;
+`;
+
 export const LoginBtn = styled.div`
-  width: 80%;
+  width: 60%;
   height: 52px;
   margin: auto;
+  margin-top: 60px;
 
   font-size: var(--font-regular);
   font-weight: var(--weight-semi-bold);
-  color: var(--blue-normal);
+  color: var(--main-green);
 
-  border-radius: 30px;
-  background-color: var(--blue-light);
+  border-radius: 12px;
+  border: 2px solid var(--main-green);
 
   display: flex;
   align-items: center;
@@ -88,17 +98,16 @@ export const LoginBtn = styled.div`
 `;
 
 export const SignUpBtn = styled.div`
-  width: 80%;
+  width: 60%;
   height: 52px;
   margin: auto;
   margin-top: 12px;
 
   font-size: var(--font-regular);
   font-weight: var(--weight-semi-bold);
-  color: var(--white-default);
+  background-color: var(--main-green);
 
-  border-radius: 30px;
-  border: 3px solid var(--white-default);
+  border-radius: 12px;
 
   display: flex;
   align-items: center;

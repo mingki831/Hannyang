@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import * as LoginST from './LoginStyle';
 import Layout from '../../components/layout/Layout';
 import SVG from '../../components/imgs/SVG';
-import Logo1 from '../../components/imgs/Logo1.png';
+import Logo from '../../components/imgs/Logo.png';
 
 import { PageContext } from '../../components/context/PageContext';
 import { useInput } from '../../hooks/useInput';
@@ -72,8 +72,8 @@ export default function SignUp() {
             <LoginST.ContentZone>
 
                 {/* 문구 */}
-                <LoginST.LogoZone> <LoginST.LogoImage src={Logo1}/> </LoginST.LogoZone>
-                <LoginST.LogoZone> 한냥 </LoginST.LogoZone>    
+                <LoginST.LogoImage src={Logo}/>
+                <LoginST.LogoZone> 쉽고 편한 설문 운영,관리 솔루션 </LoginST.LogoZone>    
                 
                 <LoginST.InputZone>
                 {/* 이메일 */}
@@ -96,10 +96,12 @@ export default function SignUp() {
                 {/* 로그인 성공여부 */}
                 {(isCantLogin === true) ? (
                     <LoginST.CautionText>
-                        <SVG name='Caution' size='15' color='var(--red-caution)'/>
+                        <SVG name='Caution' size='18' color='var(--main-pink)'/>
                         이메일과 비밀번호를 다시 확인해주세요 !
                     </LoginST.CautionText>
-                ) : null}
+                ) : (
+                    <LoginST.NoCaution/>
+                )}
 
                 <LoginST.LoginBtn onClick={LoginHandler}>
                     로그인
